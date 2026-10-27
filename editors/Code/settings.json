@@ -1,0 +1,92 @@
+{
+  "workbench.productIconTheme": "viraUIIcons",
+  "workbench.colorTheme": "GitHub Dark Dimmed",
+  "workbench.settings.applyToAllProfiles": [
+    "accessibility.signals.terminalCommandSucceeded",
+    "accessibility.signals.terminalCommandFailed",
+    "terminal.integrated.cursorStyle",
+    "terminal.integrated.cursorStyleInactive",
+    "terminal.integrated.defaultProfile.linux",
+    "terminal.integrated.defaultLocation",
+    "terminal.integrated.enableImages",
+    "terminal.integrated.enableMultiLinePasteWarning"
+  ],
+  "remoteHub.commitDirectlyWarning": "off",
+  "explorer.confirmDragAndDrop": false,
+  "accessibility.signals.terminalCommandFailed": {
+    "sound": "on"
+  },
+  "accessibility.signals.terminalCommandSucceeded": {
+    "sound": "on"
+  },
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.cursorStyleInactive": "none",
+  "terminal.integrated.cursorStyle": "underline",
+  "terminal.integrated.defaultLocation": "editor",
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "terminal.integrated.enableImages": true,
+  "terminal.integrated.enableMultiLinePasteWarning": "never",
+  "editor.fontFamily": "'JetBrainsMono Nerd Font'",
+  "editor.wordWrap": "on",
+  "files.exclude": {
+    "**/.git": false
+  },
+  "workbench.editor.customLabels.enabled": true,
+  "workbench.editor.customLabels.patterns": {
+    "**/*.entra": "${filename}"
+  },
+  "terminal.integrated.fontFamily": "monospace",
+  "explorer.confirmDelete": false,
+  "window.autoDetectColorScheme": true,
+  "editor.minimap.enabled": false,
+  "git.confirmSync": false,
+  "explorer.confirmPasteNative": false,
+  "git.enableSmartCommit": true,
+  "git.autofetch": true,
+  "remote.autoForwardPortsSource": "hybrid",
+  "files.autoSave": "afterDelay",
+  "chat.disableAIFeatures": true,
+  "workbench.preferredLightColorTheme": "Dark 2026",
+  "workbench.editorAssociations": {
+    "*.jks": "default"
+  },
+  "mssql.connectionGroups": [
+    {
+      "name": "ROOT",
+      "id": "ROOT"
+    },
+    {
+      "name": "Xponent",
+      "color": "#038387",
+      "id": "3c37d481-203a-4e7a-9522-9fffc3531bdd",
+      "parentId": "ROOT"
+    }
+  ],
+  "workbench.iconTheme": "material-icon-theme",
+  "http.systemCertificatesNode": true,
+  "mssql.connections": [
+    {
+      "authenticationType": "ActiveDirectoryDefault",
+      "connectTimeout": 30,
+      "applicationName": "vscode-mssql",
+      "applicationIntent": "ReadWrite",
+      "server": "dev-cac-xpo-sqldb.database.windows.net",
+      "database": "dev-cac-xpo-sqldb",
+      "commandTimeout": 30,
+      "encrypt": "Mandatory",
+      "groupId": "3c37d481-203a-4e7a-9522-9fffc3531bdd",
+      "trustServerCertificate": true,
+      "id": "13885eac-05cb-42dd-8410-1e1a891104bf",
+      "password": ""
+    }
+  ],
+  "mssql.objectExplorer.groupBySchema": false,
+  "latex-workshop.latex.outDir": "%DIR%/build",
+  "claudeCode.preferredLocation": "panel",
+  "claudeCode.hideOnboarding": true,
+  "python.analysis.extraPaths": [],
+  "dotfiles.repository": "https://github.com/nishkodotco/dotfiles",
+  "dotfiles.targetPath": "~/dotfiles",
+  "dotfiles.installCommand": "./install.sh --install-tools",
+  "window.newWindowProfile": "Default"
+}

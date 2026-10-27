@@ -1,0 +1,7 @@
+[user]
+	email = nishkodotco@gmail.com
+	name = nishko
+[pull]
+	rebase = true
+[alias]
+	tree = log --graph --oneline --all --decorate

@@ -1,0 +1,16 @@
+# Never track credentials, machine state, caches, or downloaded binaries.
+.env
+.env.*
+*.pem
+*.key
+*.jks
+*.p12
+*.p8
+*.pfx
+credentials*
+secrets*
+.auth*
+.DS_Store
+__pycache__/
+*.pyc
+.local/

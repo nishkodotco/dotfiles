@@ -1,0 +1,2 @@
+# Managed by nishkodotco/dotfiles.
+[ ! -f "$HOME/.config/shell/path.sh" ] || . "$HOME/.config/shell/path.sh"

@@ -1,0 +1,20 @@
+#!/usr/bin/env python3
+"""Keep edits and updates in the dotfiles checkout."""
+from pathlib import Path
+import subprocess
+import sys
+ROOT = Path(__file__).resolve().parents[1]
+command = sys.argv[1] if len(sys.argv) > 1 else 'status'
+if command == 'status':
+    subprocess.run(['git', '-C', str(ROOT), 'status', '--short', '--branch'], check=True)
+elif command in ['apply', 'check']:
+    subprocess.run([sys.executable, str(ROOT / 'scripts/install.py'), *(['--check'] if command == 'check' else [])], check=True)
+elif command == 'pull':
+    if subprocess.check_output(['git', '-C', str(ROOT), 'status', '--porcelain']).strip():
+        raise SystemExit('Commit or preserve local dotfiles edits before pulling.')
+    subprocess.run(['git', '-C', str(ROOT), 'pull', '--ff-only'], check=True)
+    subprocess.run([sys.executable, str(ROOT / 'scripts/install.py')], check=True)
+elif command == 'path':
+    print(ROOT)
+else:
+    raise SystemExit('Usage: dotfiles [status|apply|check|pull|path]')

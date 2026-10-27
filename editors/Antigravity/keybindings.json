@@ -1,0 +1,22 @@
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "cmd+k cmd+o",
+        "command": "workbench.action.files.openFileFolder",
+        "when": "isMacNative && openFolderWorkspaceSupport"
+    },
+    {
+        "key": "cmd+o",
+        "command": "-workbench.action.files.openFileFolder",
+        "when": "isMacNative && openFolderWorkspaceSupport"
+    }
+,
+{
+  "key": "ctrl+`",
+  "command": "-workbench.action.terminal.toggleTerminal"
+},
+{
+  "key": "ctrl+`",
+  "command": "workbench.action.createTerminalEditor"
+}
+]

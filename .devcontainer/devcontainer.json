@@ -1,0 +1,24 @@
+{
+  "name": "Shared dotfiles development environment",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
+  },
+  "postCreateCommand": "./install.sh --install-tools",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.profiles.linux": {
+          "Nushell": {
+            "path": "${env:HOME}/.local/bin/nu"
+          }
+        },
+        "terminal.integrated.defaultProfile.linux": "Nushell",
+        "terminal.integrated.defaultLocation": "editor",
+        "editor.fontFamily": "'JetBrains Mono', monospace",
+        "terminal.integrated.fontFamily": "JetBrains Mono",
+        "debug.console.fontFamily": "'JetBrains Mono', monospace"
+      }
+    }
+  }
+}
