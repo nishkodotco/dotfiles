@@ -10,11 +10,14 @@
   {"key": "ctrl+shift+o d", "command": "workbench.action.files.openFolder"},  // mac: cmd+shift+o d
   {"key": "ctrl+shift+o w", "command": "workbench.action.openWorkspace"},  // mac: cmd+shift+o w
   {"key": "ctrl+shift+o r", "command": "workbench.action.openRecent"},  // mac: cmd+shift+o r
-  {"key": "ctrl+shift+l right", "command": "workbench.action.moveEditorToRightGroup"},  // mac: cmd+shift+l right
-  {"key": "ctrl+shift+l left", "command": "workbench.action.moveEditorToLeftGroup"},  // mac: cmd+shift+l left
-  {"key": "ctrl+shift+l up", "command": "workbench.action.moveEditorToAboveGroup"},  // mac: cmd+shift+l up
-  {"key": "ctrl+shift+l down", "command": "workbench.action.moveEditorToBelowGroup"},  // mac: cmd+shift+l down
-  {"key": "ctrl+shift+l s", "command": "workbench.action.splitEditorRight"},  // mac: cmd+shift+l s
+  {"key": "ctrl+shift+l right", "command": "workbench.action.splitEditorRight"},  // mac: cmd+shift+l right
+  {"key": "ctrl+shift+l left", "command": "workbench.action.splitEditorLeft"},  // mac: cmd+shift+l left
+  {"key": "ctrl+shift+l up", "command": "workbench.action.splitEditorUp"},  // mac: cmd+shift+l up
+  {"key": "ctrl+shift+l down", "command": "workbench.action.splitEditorDown"},  // mac: cmd+shift+l down
+  {"key": "ctrl+shift+l shift+right", "command": "workbench.action.moveEditorToRightGroup"},  // mac: cmd+shift+l shift+right
+  {"key": "ctrl+shift+l shift+left", "command": "workbench.action.moveEditorToLeftGroup"},  // mac: cmd+shift+l shift+left
+  {"key": "ctrl+shift+l shift+up", "command": "workbench.action.moveEditorToAboveGroup"},  // mac: cmd+shift+l shift+up
+  {"key": "ctrl+shift+l shift+down", "command": "workbench.action.moveEditorToBelowGroup"},  // mac: cmd+shift+l shift+down
   {"key": "ctrl+shift+l e", "command": "workbench.action.evenEditorWidths"},  // mac: cmd+shift+l e
   {"key": "ctrl+shift+l m", "command": "workbench.action.toggleMaximizeEditorGroup"},  // mac: cmd+shift+l m
   {"key": "ctrl+shift+l j", "command": "workbench.action.joinAllGroups"},  // mac: cmd+shift+l j
