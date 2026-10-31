@@ -10,6 +10,14 @@
   {"key": "ctrl+shift+o d", "command": "workbench.action.files.openFolder"},  // mac: cmd+shift+o d
   {"key": "ctrl+shift+o w", "command": "workbench.action.openWorkspace"},  // mac: cmd+shift+o w
   {"key": "ctrl+shift+o r", "command": "workbench.action.openRecent"},  // mac: cmd+shift+o r
+  {"key": "ctrl+shift+l r", "command": "workbench.action.moveEditorToRightGroup"},  // mac: cmd+shift+l r
+  {"key": "ctrl+shift+l l", "command": "workbench.action.moveEditorToLeftGroup"},  // mac: cmd+shift+l l
+  {"key": "ctrl+shift+l u", "command": "workbench.action.moveEditorToAboveGroup"},  // mac: cmd+shift+l u
+  {"key": "ctrl+shift+l d", "command": "workbench.action.moveEditorToBelowGroup"},  // mac: cmd+shift+l d
+  {"key": "ctrl+shift+l s", "command": "workbench.action.splitEditorRight"},  // mac: cmd+shift+l s
+  {"key": "ctrl+shift+l e", "command": "workbench.action.evenEditorWidths"},  // mac: cmd+shift+l e
+  {"key": "ctrl+shift+l m", "command": "workbench.action.toggleMaximizeEditorGroup"},  // mac: cmd+shift+l m
+  {"key": "ctrl+shift+l j", "command": "workbench.action.joinAllGroups"},  // mac: cmd+shift+l j
   {"key": "ctrl+shift+n", "command": "workbench.action.newWindow"},  // mac: cmd+shift+n
   {"key": "ctrl+shift+r", "command": "workbench.action.reloadWindow"},  // mac: cmd+shift+r
   {"key": "ctrl+shift+;", "command": "runCommands", "args": {"commands": ["workbench.action.files.saveAll", "workbench.action.reloadWindow"]}},  // mac: cmd+shift+;
