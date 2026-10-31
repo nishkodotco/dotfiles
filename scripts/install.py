@@ -29,11 +29,14 @@ def links(home, system):
     result += [(ROOT / 'scripts/dotfiles', home / '.local/bin/dotfiles')]
     if system == 'Darwin':
         result += [(ROOT / 'editors' / app / name, home / 'Library/Application Support' / app / 'User' / name) for app in ['Code', 'Antigravity'] for name in ['settings.json', 'keybindings.json']]
+        profiles = home / 'Library/Application Support/Code/User/profiles'
+        if profiles.is_dir():
+            result += [(ROOT / 'editors/Code/keybindings.json', profile / 'keybindings.json') for profile in sorted(profiles.iterdir()) if profile.is_dir()]
     if system == 'Darwin':
         marker = home / '.local/state/dotfiles/xponent-profile-path'
         profile = Path(marker.read_text().strip()) if marker.is_file() else None
         if profile is not None and profile.is_dir():
-            result += [(home / 'workspace/github/xponent/app.xponent.automation/vscode-profile' / name, profile / name) for name in ['settings.json', 'keybindings.json']]
+            result += [(home / 'workspace/github/xponent/app.xponent.automation/vscode-profile/settings.json', profile / 'settings.json')]
     return result
 
 def install_nu(home):

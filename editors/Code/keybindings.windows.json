@@ -53,6 +53,7 @@
   {"key": "left", "command": "runCommands", "when": "editorHoverVisible && !editorHoverFocused && editorTextFocus && !suggestWidgetVisible", "args": {"commands": [{"command": "editor.action.showHover", "args": {"focus": "focusIfVisible"}}, "editor.action.pageUpHover"]}},  // mac: left
   {"key": "down", "command": "editor.action.scrollDownHover", "when": "editorHoverFocused"},  // mac: down
   {"key": "up", "command": "editor.action.scrollUpHover", "when": "editorHoverFocused"},  // mac: up
+  {"key": "ctrl+d", "command": "moveFileToTrash", "when": "filesExplorerFocus && !inputFocus"},  // mac: cmd+d
   {"key": "ctrl+r", "command": "editor.action.rename", "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"},  // mac: cmd+r
   {"key": "ctrl+r", "command": "renameFile", "when": "filesExplorerFocus && !inputFocus"},  // mac: cmd+r
   {"key": "ctrl+f", "command": "list.find", "when": "listFocus && listSupportsFind && !inputFocus"},  // mac: cmd+f
