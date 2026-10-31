@@ -528,7 +528,6 @@
   {"key": "ctrl+k ctrl+q", "command": "-workbench.action.navigateToLastEditLocation"},  // mac: cmd+k cmd+q
   {"key": "ctrl+shift+n", "command": "-workbench.action.newWindow"},  // mac: shift+cmd+n
   {"key": "ctrl+shift+]", "command": "-workbench.action.nextEditor"},  // mac: shift+cmd+]
-  {"key": "ctrl+alt+right", "command": "-workbench.action.nextEditor"},  // mac: alt+cmd+right
   {"key": "ctrl+k ctrl+alt+right", "command": "-workbench.action.nextEditorInGroup"},  // mac: cmd+k alt+cmd+right
   {"key": "ctrl+shift+a", "command": "-workbench.action.openAgentsWindow", "when": "chatHasCreatedSessionInAgentsWindow && config.chat.agent.enabled && !accessibilityModeEnabled && !chatSetupDisabledInWorkspace && !chatSetupHidden && !isAuxiliaryWindow && !isSessionsWindow", "args": {"source": "keyboardShortcut"}},  // mac: shift+cmd+a
   {"key": "ctrl+shift+alt+a", "command": "-workbench.action.openAgentsWindow", "when": "accessibilityModeEnabled && chatHasCreatedSessionInAgentsWindow && config.chat.agent.enabled && !chatSetupDisabledInWorkspace && !chatSetupHidden && !isAuxiliaryWindow && !isSessionsWindow", "args": {"source": "keyboardShortcut"}},  // mac: shift+alt+cmd+a
@@ -548,7 +547,6 @@
   {"key": "ctrl+shift+u", "command": "-workbench.action.output.toggleOutput", "when": "workbench.panel.output.active"},  // mac: shift+cmd+u
   {"key": "ctrl+k shift+enter", "command": "-workbench.action.pinEditor", "when": "!activeEditorIsPinned"},  // mac: cmd+k shift+enter
   {"key": "ctrl+shift+[", "command": "-workbench.action.previousEditor"},  // mac: shift+cmd+[
-  {"key": "ctrl+alt+left", "command": "-workbench.action.previousEditor"},  // mac: alt+cmd+left
   {"key": "ctrl+k ctrl+alt+left", "command": "-workbench.action.previousEditorInGroup"},  // mac: cmd+k alt+cmd+left
   {"key": "ctrl+p", "command": "-workbench.action.quickOpen"},  // mac: cmd+p
   {"key": "alt+q", "command": "-workbench.action.quickOpenView"},  // mac: ctrl+q
