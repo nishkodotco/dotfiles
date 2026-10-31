@@ -48,6 +48,10 @@ OVERRIDES = {
     ('ctrl+alt+c', 'workbench.files.action.collapseExplorerFolders'): 'ctrl+shift+alt+x',
     ('cmd+ctrl+shift+d', 'git.openChange'): 'ctrl+shift+alt+v',
     ('cmd+ctrl+shift+p', 'git.push'): 'ctrl+shift+alt+y',
+    # Option+Tab would be Alt+Tab, the Windows app switcher: Ctrl+Tab does the same there.
+    ('alt+tab', 'workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup'): None,
+    ('alt+tab', 'workbench.action.quickOpenNavigateNextInEditorPicker'): None,
+    ('alt+shift+tab', 'workbench.action.quickOpenNavigatePreviousInEditorPicker'): None,
 }
 
 notes = []
