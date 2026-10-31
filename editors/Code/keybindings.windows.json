@@ -5,9 +5,11 @@
   {"key": "ctrl+shift+c", "command": "workbench.action.showCommands", "when": "!terminalFocus || !terminalTextSelected"},  // mac: shift+cmd+c
   {"key": "ctrl+shift+p", "command": "workbench.profiles.actions.switchProfile"},  // mac: cmd+shift+p
   {"key": "ctrl+shift+s", "command": "workbench.action.openSettingsJson"},  // mac: cmd+shift+s
-  {"key": "ctrl+shift+k", "command": "workbench.action.files.openFolder"},  // mac: cmd+shift+k
   {"key": "ctrl+shift+x", "command": "workbench.view.extensions"},  // mac: cmd+shift+x
-  {"key": "ctrl+shift+o", "command": "workbench.action.files.openFile"},  // mac: cmd+shift+o
+  {"key": "ctrl+shift+o f", "command": "workbench.action.files.openFile"},  // mac: cmd+shift+o f
+  {"key": "ctrl+shift+o d", "command": "workbench.action.files.openFolder"},  // mac: cmd+shift+o d
+  {"key": "ctrl+shift+o w", "command": "workbench.action.openWorkspace"},  // mac: cmd+shift+o w
+  {"key": "ctrl+shift+o r", "command": "workbench.action.openRecent"},  // mac: cmd+shift+o r
   {"key": "ctrl+shift+n", "command": "workbench.action.newWindow"},  // mac: cmd+shift+n
   {"key": "ctrl+shift+r", "command": "workbench.action.reloadWindow"},  // mac: cmd+shift+r
   {"key": "ctrl+shift+;", "command": "runCommands", "args": {"commands": ["workbench.action.files.saveAll", "workbench.action.reloadWindow"]}},  // mac: cmd+shift+;

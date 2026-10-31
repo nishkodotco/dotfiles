@@ -10,10 +10,14 @@
   {"key": "cmd+shift+p", "command": "workbench.profiles.actions.switchProfile"},
   {"key": "cmd+shift+s", "command": "workbench.action.openSettingsJson"},
   // {"key": "cmd+shift+k", "command": "workbench.action.openGlobalKeybindingsFile"}, // replaced: Cmd+Shift+K = Open Folder
-  {"key": "cmd+shift+k", "command": "workbench.action.files.openFolder"},
+  // {"key": "cmd+shift+k", "command": "workbench.action.files.openFolder"}, // replaced by Cmd+Shift+O, D
   {"key": "cmd+shift+x", "command": "workbench.view.extensions"},
   // {"key": "cmd+shift+o", "command": "workbench.profiles.actions.switchProfile"}, // replaced: Cmd+Shift+O = Open File
-  {"key": "cmd+shift+o", "command": "workbench.action.files.openFile"},
+  // Open: press Cmd+Shift+O, then F (file), D (folder), W (workspace) or R (recent)
+  {"key": "cmd+shift+o f", "command": "workbench.action.files.openFile"},
+  {"key": "cmd+shift+o d", "command": "workbench.action.files.openFolder"},
+  {"key": "cmd+shift+o w", "command": "workbench.action.openWorkspace"},
+  {"key": "cmd+shift+o r", "command": "workbench.action.openRecent"},
   {"key": "cmd+shift+n", "command": "workbench.action.newWindow"},
   {"key": "cmd+shift+r", "command": "workbench.action.reloadWindow"},
   {"key": "cmd+shift+;", "command": "runCommands", "args": {"commands": ["workbench.action.files.saveAll", "workbench.action.reloadWindow"]}},
