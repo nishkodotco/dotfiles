@@ -6,7 +6,7 @@
 [
   // ===== Part 1: scheme =====
   // --- VS Code itself ---
-  {"key": "cmd+i", "command": "workbench.action.showCommands"}, // Command Palette
+  {"key": "shift+cmd+c", "command": "workbench.action.showCommands", "when": "!terminalFocus || !terminalTextSelected"}, // Command Palette (Linux keeps Ctrl+Shift+C = copy in a terminal with a selection)
   {"key": "cmd+shift+p", "command": "workbench.profiles.actions.switchProfile"},
   {"key": "cmd+shift+s", "command": "workbench.action.openSettingsJson"},
   // {"key": "cmd+shift+k", "command": "workbench.action.openGlobalKeybindingsFile"}, // replaced: Cmd+Shift+K = Open Folder

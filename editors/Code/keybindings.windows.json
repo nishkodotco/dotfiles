@@ -2,7 +2,7 @@
 // Mapping: Mac Cmd -> Ctrl, Mac Ctrl -> Alt, Mac Cmd+Ctrl -> Ctrl+Alt, Mac Alt -> Alt.
 // Regenerate after changing the Mac file: python3 scripts/make-windows-keybindings.py
 [
-  {"key": "ctrl+i", "command": "workbench.action.showCommands"},  // mac: cmd+i
+  {"key": "ctrl+shift+c", "command": "workbench.action.showCommands", "when": "!terminalFocus || !terminalTextSelected"},  // mac: shift+cmd+c
   {"key": "ctrl+shift+p", "command": "workbench.profiles.actions.switchProfile"},  // mac: cmd+shift+p
   {"key": "ctrl+shift+s", "command": "workbench.action.openSettingsJson"},  // mac: cmd+shift+s
   {"key": "ctrl+shift+k", "command": "workbench.action.files.openFolder"},  // mac: cmd+shift+k
