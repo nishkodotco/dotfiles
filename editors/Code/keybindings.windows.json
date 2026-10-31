@@ -19,6 +19,8 @@
   {"key": "ctrl+0", "command": "workbench.action.terminal.fontZoomReset", "when": "terminalFocus"},  // mac: cmd+0
   {"key": "ctrl+alt+left", "command": "workbench.action.previousEditor"},  // mac: cmd+alt+left
   {"key": "ctrl+alt+right", "command": "workbench.action.nextEditor"},  // mac: cmd+alt+right
+  {"key": "ctrl+shift+left", "command": "workbench.action.previousEditor"},  // mac: shift+cmd+left
+  {"key": "ctrl+shift+right", "command": "workbench.action.nextEditor"},  // mac: shift+cmd+right
   {"key": "ctrl+alt+t", "command": "workbench.action.closeOtherEditors"},  // mac: cmd+alt+t
   {"key": "ctrl+alt+\\", "command": "workbench.action.splitEditorRight"},  // mac: cmd+alt+\
   {"key": "ctrl+alt+-", "command": "workbench.action.splitEditorDown"},  // mac: cmd+alt+-
