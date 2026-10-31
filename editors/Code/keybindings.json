@@ -77,6 +77,7 @@
   // Explorer: Enter opens a file in the editor (never renames); folders open/close with the arrow keys
   {"key": "enter", "command": "-renameFile"},
   {"key": "enter", "command": "explorer.openAndPassFocus", "when": "filesExplorerFocus && !explorerResourceIsFolder && !inputFocus"},
+  {"key": "enter", "command": "runCommands", "when": "filesExplorerFocus && explorerResourceIsFolder && !inputFocus", "args": {"commands": []}}, // Enter on a folder does nothing
   {"key": "cmd+f", "command": "list.find", "when": "listFocus && listSupportsFind && !inputFocus"},
   // --- With the file: Ctrl+Shift acts on the open file from the editor (R rename, D delete, C copy path). ---
   {"key": "ctrl+shift+r", "command": "renameFile", "when": "filesExplorerFocus && !inputFocus"},

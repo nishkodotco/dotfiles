@@ -58,6 +58,7 @@
   {"key": "ctrl+r", "command": "renameFile", "when": "filesExplorerFocus && !inputFocus"},  // mac: cmd+r
   {"key": "enter", "command": "-renameFile"},  // mac: enter
   {"key": "enter", "command": "explorer.openAndPassFocus", "when": "filesExplorerFocus && !explorerResourceIsFolder && !inputFocus"},  // mac: enter
+  {"key": "enter", "command": "runCommands", "when": "filesExplorerFocus && explorerResourceIsFolder && !inputFocus", "args": {"commands": []}},  // mac: enter
   {"key": "ctrl+f", "command": "list.find", "when": "listFocus && listSupportsFind && !inputFocus"},  // mac: cmd+f
   {"key": "shift+alt+r", "command": "renameFile", "when": "filesExplorerFocus && !inputFocus"},  // mac: ctrl+shift+r
   {"key": "shift+alt+r", "command": "runCommands", "when": "!filesExplorerFocus", "args": {"commands": ["workbench.files.action.showActiveFileInExplorer", "renameFile"]}},  // mac: ctrl+shift+r
