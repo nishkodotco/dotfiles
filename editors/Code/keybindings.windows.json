@@ -104,6 +104,7 @@
   {"key": "ctrl+e", "command": "workbench.action.focusActiveEditorGroup"},  // mac: cmd+e
   {"key": "ctrl+e", "command": "workbench.files.action.focusFilesExplorer", "when": "editorFocus || notebookEditorFocused"},  // mac: cmd+e
   {"key": "ctrl+shift+e", "command": "workbench.view.explorer"},  // mac: shift+cmd+e
+  {"key": "ctrl+shift+e", "command": "runCommands", "when": "sideBarVisible && activeViewlet == 'workbench.view.explorer'", "args": {"commands": ["workbench.action.closeSidebar", "workbench.action.focusActiveEditorGroup"]}},  // mac: shift+cmd+e
   {"key": "ctrl+shift+f", "command": "workbench.action.findInFiles"},  // mac: shift+cmd+f
   {"key": "ctrl+shift+f", "command": "runCommands", "when": "sideBarVisible && activeViewlet == 'workbench.view.search'", "args": {"commands": ["workbench.action.closeSidebar", "workbench.action.focusActiveEditorGroup"]}},  // mac: shift+cmd+f
   {"key": "ctrl+shift+g", "command": "workbench.view.scm"},  // mac: shift+cmd+g

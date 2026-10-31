@@ -131,6 +131,7 @@
   {"key": "cmd+e", "command": "workbench.files.action.focusFilesExplorer", "when": "editorFocus || notebookEditorFocused"},
   // --- Sidebar: direct jumps, and Cmd+Shift+Up/Down to cycle through every sidebar view (incl. extensions) ---
   {"key": "shift+cmd+e", "command": "workbench.view.explorer"},
+  {"key": "shift+cmd+e", "command": "runCommands", "when": "sideBarVisible && activeViewlet == 'workbench.view.explorer'", "args": {"commands": ["workbench.action.closeSidebar", "workbench.action.focusActiveEditorGroup"]}}, // press again: close Explorer, back to editor
   {"key": "shift+cmd+f", "command": "workbench.action.findInFiles"},
   {"key": "shift+cmd+f", "command": "runCommands", "when": "sideBarVisible && activeViewlet == 'workbench.view.search'", "args": {"commands": ["workbench.action.closeSidebar", "workbench.action.focusActiveEditorGroup"]}}, // press again: close Search, back to editor
   {"key": "shift+cmd+g", "command": "workbench.view.scm"},
