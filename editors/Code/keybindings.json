@@ -74,6 +74,9 @@
   {"key": "cmd+d", "command": "moveFileToTrash", "when": "filesExplorerFocus && !inputFocus"}, // Cmd+D in the Explorer: move to Trash (docs in the editor)
   {"key": "cmd+r", "command": "editor.action.rename", "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"},
   {"key": "cmd+r", "command": "renameFile", "when": "filesExplorerFocus && !inputFocus"},
+  // Explorer: Enter opens a file in the editor (never renames); folders open/close with the arrow keys
+  {"key": "enter", "command": "-renameFile"},
+  {"key": "enter", "command": "explorer.openAndPassFocus", "when": "filesExplorerFocus && !explorerResourceIsFolder && !inputFocus"},
   {"key": "cmd+f", "command": "list.find", "when": "listFocus && listSupportsFind && !inputFocus"},
   // --- With the file: Ctrl+Shift acts on the open file from the editor (R rename, D delete, C copy path). ---
   {"key": "ctrl+shift+r", "command": "renameFile", "when": "filesExplorerFocus && !inputFocus"},
