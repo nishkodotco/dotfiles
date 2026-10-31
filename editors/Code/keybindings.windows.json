@@ -97,6 +97,7 @@
   {"key": "ctrl+alt+n", "command": "workbench.action.terminal.new"},  // mac: cmd+ctrl+n
   {"key": "ctrl+t", "command": "workbench.action.terminal.toggleTerminal"},  // mac: cmd+t
   {"key": "ctrl+t", "command": "runCommands", "when": "panelVisible && activePanel == 'terminal'", "args": {"commands": ["workbench.action.closePanel", "workbench.action.focusActiveEditorGroup"]}},  // mac: cmd+t
+  {"key": "ctrl+t", "command": "openInIntegratedTerminal", "when": "filesExplorerFocus && !inputFocus"},  // mac: cmd+t
   {"key": "ctrl+o", "command": "workbench.action.output.toggleOutput"},  // mac: cmd+o
   {"key": "ctrl+o", "command": "runCommands", "when": "panelVisible && activePanel == 'workbench.panel.output'", "args": {"commands": ["workbench.action.closePanel", "workbench.action.focusActiveEditorGroup"]}},  // mac: cmd+o
   {"key": "ctrl+p", "command": "~remote.forwardedPorts.focus"},  // mac: cmd+p

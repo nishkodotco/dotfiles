@@ -123,6 +123,7 @@
   // --- Panel keys: press once to open, press again to close and go back to the editor ---
   {"key": "cmd+t", "command": "workbench.action.terminal.toggleTerminal"},
   {"key": "cmd+t", "command": "runCommands", "when": "panelVisible && activePanel == 'terminal'", "args": {"commands": ["workbench.action.closePanel", "workbench.action.focusActiveEditorGroup"]}},
+  {"key": "cmd+t", "command": "openInIntegratedTerminal", "when": "filesExplorerFocus && !inputFocus"}, // in the Explorer: new terminal at the selected file's folder
   {"key": "cmd+o", "command": "workbench.action.output.toggleOutput"},
   {"key": "cmd+o", "command": "runCommands", "when": "panelVisible && activePanel == 'workbench.panel.output'", "args": {"commands": ["workbench.action.closePanel", "workbench.action.focusActiveEditorGroup"]}},
   {"key": "cmd+p", "command": "~remote.forwardedPorts.focus"},
