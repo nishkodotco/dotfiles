@@ -6,7 +6,8 @@
 [
   // ===== Part 1: scheme =====
   // --- VS Code itself ---
-  {"key": "cmd+shift+p", "command": "workbench.action.showCommands"},
+  {"key": "cmd+i", "command": "workbench.action.showCommands"}, // Command Palette
+  {"key": "cmd+shift+p", "command": "workbench.profiles.actions.switchProfile"},
   {"key": "cmd+shift+s", "command": "workbench.action.openSettingsJson"},
   // {"key": "cmd+shift+k", "command": "workbench.action.openGlobalKeybindingsFile"}, // replaced: Cmd+Shift+K = Open Folder
   {"key": "cmd+shift+k", "command": "workbench.action.files.openFolder"},
