@@ -82,7 +82,7 @@
   {"key": "cmd+d", "command": "moveFileToTrash", "when": "filesExplorerFocus && !inputFocus"}, // Cmd+D in the Explorer: move to Trash (docs in the editor)
   {"key": "cmd+r", "command": "editor.action.rename", "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"},
   {"key": "cmd+r", "command": "renameFile", "when": "filesExplorerFocus && !inputFocus"},
-  {"key": "shift+cmd+m", "command": "workbench.files.action.collapseExplorerFolders", "when": "filesExplorerFocus && !inputFocus"}, // Explorer: collapse all folders
+  {"key": "shift+cmd+m", "command": "list.toggleExpand", "when": "filesExplorerFocus && explorerResourceIsFolder && !inputFocus"}, // Explorer: open/close the selected folder (does nothing on files)
   // Explorer: Enter opens a file in the editor (never renames); folders open/close with the arrow keys
   {"key": "enter", "command": "-renameFile"},
   {"key": "enter", "command": "explorer.openAndPassFocus", "when": "filesExplorerFocus && !explorerResourceIsFolder && !inputFocus"},
