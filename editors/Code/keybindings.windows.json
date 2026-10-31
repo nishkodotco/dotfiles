@@ -10,10 +10,10 @@
   {"key": "ctrl+shift+o d", "command": "workbench.action.files.openFolder"},  // mac: cmd+shift+o d
   {"key": "ctrl+shift+o w", "command": "workbench.action.openWorkspace"},  // mac: cmd+shift+o w
   {"key": "ctrl+shift+o r", "command": "workbench.action.openRecent"},  // mac: cmd+shift+o r
-  {"key": "ctrl+shift+l r", "command": "workbench.action.moveEditorToRightGroup"},  // mac: cmd+shift+l r
-  {"key": "ctrl+shift+l l", "command": "workbench.action.moveEditorToLeftGroup"},  // mac: cmd+shift+l l
-  {"key": "ctrl+shift+l u", "command": "workbench.action.moveEditorToAboveGroup"},  // mac: cmd+shift+l u
-  {"key": "ctrl+shift+l d", "command": "workbench.action.moveEditorToBelowGroup"},  // mac: cmd+shift+l d
+  {"key": "ctrl+shift+l right", "command": "workbench.action.moveEditorToRightGroup"},  // mac: cmd+shift+l right
+  {"key": "ctrl+shift+l left", "command": "workbench.action.moveEditorToLeftGroup"},  // mac: cmd+shift+l left
+  {"key": "ctrl+shift+l up", "command": "workbench.action.moveEditorToAboveGroup"},  // mac: cmd+shift+l up
+  {"key": "ctrl+shift+l down", "command": "workbench.action.moveEditorToBelowGroup"},  // mac: cmd+shift+l down
   {"key": "ctrl+shift+l s", "command": "workbench.action.splitEditorRight"},  // mac: cmd+shift+l s
   {"key": "ctrl+shift+l e", "command": "workbench.action.evenEditorWidths"},  // mac: cmd+shift+l e
   {"key": "ctrl+shift+l m", "command": "workbench.action.toggleMaximizeEditorGroup"},  // mac: cmd+shift+l m
