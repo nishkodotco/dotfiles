@@ -59,6 +59,7 @@
   {"key": "ctrl+d", "command": "moveFileToTrash", "when": "filesExplorerFocus && !inputFocus"},  // mac: cmd+d
   {"key": "ctrl+r", "command": "editor.action.rename", "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"},  // mac: cmd+r
   {"key": "ctrl+r", "command": "renameFile", "when": "filesExplorerFocus && !inputFocus"},  // mac: cmd+r
+  {"key": "ctrl+shift+m", "command": "workbench.files.action.collapseExplorerFolders", "when": "filesExplorerFocus && !inputFocus"},  // mac: shift+cmd+m
   {"key": "enter", "command": "-renameFile"},  // mac: enter
   {"key": "enter", "command": "explorer.openAndPassFocus", "when": "filesExplorerFocus && !explorerResourceIsFolder && !inputFocus"},  // mac: enter
   {"key": "enter", "command": "runCommands", "when": "filesExplorerFocus && explorerResourceIsFolder && !inputFocus", "args": {"commands": []}},  // mac: enter
