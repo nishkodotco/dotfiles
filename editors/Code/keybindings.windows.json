@@ -95,15 +95,14 @@
   {"key": "ctrl+alt+k", "command": "workbench.action.tasks.terminate"},  // mac: cmd+ctrl+k
   {"key": "ctrl+alt+`", "command": "workbench.action.terminal.toggleTerminal"},  // mac: cmd+ctrl+`
   {"key": "ctrl+alt+n", "command": "workbench.action.terminal.new"},  // mac: cmd+ctrl+n
-  {"key": "ctrl+t", "command": "workbench.action.terminal.toggleTerminal"},  // mac: cmd+t
-  {"key": "ctrl+t", "command": "runCommands", "when": "panelVisible && activePanel == 'terminal'", "args": {"commands": ["workbench.action.closePanel", "workbench.action.focusActiveEditorGroup"]}},  // mac: cmd+t
+  {"key": "ctrl+t", "command": "workbench.action.createTerminalEditor"},  // mac: cmd+t
   {"key": "ctrl+t", "command": "openInIntegratedTerminal", "when": "filesExplorerFocus && !inputFocus"},  // mac: cmd+t
   {"key": "ctrl+o", "command": "workbench.action.output.toggleOutput"},  // mac: cmd+o
   {"key": "ctrl+o", "command": "runCommands", "when": "panelVisible && activePanel == 'workbench.panel.output'", "args": {"commands": ["workbench.action.closePanel", "workbench.action.focusActiveEditorGroup"]}},  // mac: cmd+o
   {"key": "ctrl+p", "command": "~remote.forwardedPorts.focus"},  // mac: cmd+p
   {"key": "ctrl+p", "command": "runCommands", "when": "panelVisible && activePanel == '~remote.forwardedPortsContainer'", "args": {"commands": ["workbench.action.closePanel", "workbench.action.focusActiveEditorGroup"]}},  // mac: cmd+p
   {"key": "ctrl+e", "command": "workbench.action.focusActiveEditorGroup"},  // mac: cmd+e
-  {"key": "ctrl+e", "command": "workbench.files.action.focusFilesExplorer", "when": "editorFocus || notebookEditorFocused"},  // mac: cmd+e
+  {"key": "ctrl+e", "command": "workbench.files.action.focusFilesExplorer", "when": "editorFocus || notebookEditorFocused || terminalFocus"},  // mac: cmd+e
   {"key": "ctrl+shift+e", "command": "workbench.view.explorer"},  // mac: shift+cmd+e
   {"key": "ctrl+shift+e", "command": "runCommands", "when": "sideBarVisible && activeViewlet == 'workbench.view.explorer'", "args": {"commands": ["workbench.action.closeSidebar", "workbench.action.focusActiveEditorGroup"]}},  // mac: shift+cmd+e
   {"key": "ctrl+shift+f", "command": "workbench.action.findInFiles"},  // mac: shift+cmd+f

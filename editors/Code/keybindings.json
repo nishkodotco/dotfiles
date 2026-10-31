@@ -121,15 +121,14 @@
   {"key": "cmd+ctrl+`", "command": "workbench.action.terminal.toggleTerminal"},
   {"key": "cmd+ctrl+n", "command": "workbench.action.terminal.new"},
   // --- Panel keys: press once to open, press again to close and go back to the editor ---
-  {"key": "cmd+t", "command": "workbench.action.terminal.toggleTerminal"},
-  {"key": "cmd+t", "command": "runCommands", "when": "panelVisible && activePanel == 'terminal'", "args": {"commands": ["workbench.action.closePanel", "workbench.action.focusActiveEditorGroup"]}},
-  {"key": "cmd+t", "command": "openInIntegratedTerminal", "when": "filesExplorerFocus && !inputFocus"}, // in the Explorer: new terminal at the selected file's folder
+  {"key": "cmd+t", "command": "workbench.action.createTerminalEditor"}, // new terminal as an editor tab
+  {"key": "cmd+t", "command": "openInIntegratedTerminal", "when": "filesExplorerFocus && !inputFocus"}, // in the Explorer: new terminal tab at the selected file's folder
   {"key": "cmd+o", "command": "workbench.action.output.toggleOutput"},
   {"key": "cmd+o", "command": "runCommands", "when": "panelVisible && activePanel == 'workbench.panel.output'", "args": {"commands": ["workbench.action.closePanel", "workbench.action.focusActiveEditorGroup"]}},
   {"key": "cmd+p", "command": "~remote.forwardedPorts.focus"},
   {"key": "cmd+p", "command": "runCommands", "when": "panelVisible && activePanel == '~remote.forwardedPortsContainer'", "args": {"commands": ["workbench.action.closePanel", "workbench.action.focusActiveEditorGroup"]}},
   {"key": "cmd+e", "command": "workbench.action.focusActiveEditorGroup"},
-  {"key": "cmd+e", "command": "workbench.files.action.focusFilesExplorer", "when": "editorFocus || notebookEditorFocused"},
+  {"key": "cmd+e", "command": "workbench.files.action.focusFilesExplorer", "when": "editorFocus || notebookEditorFocused || terminalFocus"},
   // --- Sidebar: direct jumps, and Cmd+Shift+Up/Down to cycle through every sidebar view (incl. extensions) ---
   {"key": "shift+cmd+e", "command": "workbench.view.explorer"},
   {"key": "shift+cmd+e", "command": "runCommands", "when": "sideBarVisible && activeViewlet == 'workbench.view.explorer'", "args": {"commands": ["workbench.action.closeSidebar", "workbench.action.focusActiveEditorGroup"]}}, // press again: close Explorer, back to editor
