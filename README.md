@@ -46,20 +46,28 @@ VS Code Settings Sync controls personal editor settings that Codespaces does not
 
 ## RHEL on WSL 2 (Windows)
 
-Install WSL with `wsl --install --no-distribution` in an administrator PowerShell, then `wsl --update`.
-Download the RHEL for WSL image from https://developers.redhat.com/products/rhel/download and install it with `wsl --install --from-file <image>`.
-Inside RHEL, register the system with `sudo rhc connect` or `sudo subscription-manager register`.
-Then run:
+Download the RHEL for WSL image from https://developers.redhat.com/products/rhel/download.
+Then run this from PowerShell (administrator the first time, if WSL is not installed yet):
 
-```sh
-sudo dnf install -y git
-git clone https://github.com/nishkodotco/dotfiles ~/dotfiles
-~/dotfiles/install.sh --install-tools
+```powershell
+irm https://raw.githubusercontent.com/nishkodotco/dotfiles/main/scripts/setup-rhel-wsl.ps1 -OutFile setup-rhel-wsl.ps1
+powershell -ExecutionPolicy Bypass -File .\setup-rhel-wsl.ps1 -ImagePath "$HOME\Downloads\<rhel-image>.wsl"
 ```
 
-On RHEL, `--install-tools` installs git, which, and the GitHub CLI with dnf, and Nushell 0.113.1 with a pinned checksum.
-To make Nushell the login shell, run `echo ~/.local/bin/nu | sudo tee -a /etc/shells` and `chsh -s ~/.local/bin/nu`.
+It installs or updates WSL, installs RHEL from the image, and runs `scripts/rhel-bootstrap.sh` inside it.
+The bootstrap registers RHEL with Red Hat, installs git, clones these dotfiles, runs `install.sh --install-tools` (git, which, gh, Nushell), and makes Nushell the login shell.
+Registration prompts for the Red Hat username and password.
+To skip the prompt, create an activation key at https://console.redhat.com/insights/connector/activation-keys and add `-Organization <org-id> -ActivationKey <key-name>`.
+Never commit the activation key.
+
+On an RHEL system that is already installed, run only the bootstrap:
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/nishkodotco/dotfiles/main/scripts/rhel-bootstrap.sh -o /tmp/rhel-bootstrap.sh && sh /tmp/rhel-bootstrap.sh
+```
+
 RHEL 9 gets the static musl Nushell build because its glibc is older than 2.35.
+Set `DOTFILES_NU_SHELL=0` to keep the current login shell.
 
 ## VS Code development containers
 
