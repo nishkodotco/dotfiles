@@ -42,3 +42,10 @@ Could not configure the user's Codespaces account settings or existing Codespace
 
 In https://github.com/settings/codespaces, enable Automatically install dotfiles and select nishkodotco/dotfiles.
 Restart existing shells to load shared configuration.
+
+# RHEL on WSL 2 (2026-11-04)
+
+Added RHEL support to `install.sh --install-tools`: dnf installs git, which and gh (GitHub CLI repo added); cat is always present.
+Nushell now uses the static musl build when glibc is older than 2.35, because the gnu build failed on RHEL 9.
+Validated in ubi9 and ubi10 containers: git, which, cat, gh and nu all ran, and `install.sh --check` passed.
+Not tested inside an actual WSL distribution.

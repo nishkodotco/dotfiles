@@ -44,6 +44,23 @@ GitHub account settings are separate from files in this repository.
 Codespaces access was not available to the current GitHub CLI login during setup.
 VS Code Settings Sync controls personal editor settings that Codespaces does not load from dotfiles.
 
+## RHEL on WSL 2 (Windows)
+
+Install WSL with `wsl --install --no-distribution` in an administrator PowerShell, then `wsl --update`.
+Download the RHEL for WSL image from https://developers.redhat.com/products/rhel/download and install it with `wsl --install --from-file <image>`.
+Inside RHEL, register the system with `sudo rhc connect` or `sudo subscription-manager register`.
+Then run:
+
+```sh
+sudo dnf install -y git
+git clone https://github.com/nishkodotco/dotfiles ~/dotfiles
+~/dotfiles/install.sh --install-tools
+```
+
+On RHEL, `--install-tools` installs git, which, and the GitHub CLI with dnf, and Nushell 0.113.1 with a pinned checksum.
+To make Nushell the login shell, run `echo ~/.local/bin/nu | sudo tee -a /etc/shells` and `chsh -s ~/.local/bin/nu`.
+RHEL 9 gets the static musl Nushell build because its glibc is older than 2.35.
+
 ## VS Code development containers
 
 Set these user settings in VS Code:

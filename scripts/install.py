@@ -15,9 +15,19 @@ import urllib.request
 ROOT = Path(__file__).resolve().parents[1]
 VERSION = '0.113.1'
 DIGESTS = {
-    'x86_64': '9008d309aaa35e29ed5d5985306a83e2bf5093e31677d4cd969914552d12b8fb',
-    'aarch64': '08b94c6fd9c66881616df4c89adc03e8a42a57fdf6876cfd1b16cec7e82348b4',
+    ('x86_64', 'gnu'): '9008d309aaa35e29ed5d5985306a83e2bf5093e31677d4cd969914552d12b8fb',
+    ('aarch64', 'gnu'): '08b94c6fd9c66881616df4c89adc03e8a42a57fdf6876cfd1b16cec7e82348b4',
+    ('x86_64', 'musl'): '7faea21f8a49edf760c7bb9267f7702827937b19fc7dce412716b1cacbf38ae7',
+    ('aarch64', 'musl'): '7b973e826760d337e73ac6fb9c53bac15dbe66dba50ec439f02e8eaa1d1c2c77',
 }
+# The gnu build needs glibc 2.35 or newer; older systems such as RHEL 9 get the static musl build.
+MIN_GLIBC = (2, 35)
+
+def libc_flavor():
+    name, version = platform.libc_ver()
+    if name != 'glibc' or not version:
+        return 'musl'
+    return 'gnu' if tuple(int(part) for part in version.split('.')[:2]) >= MIN_GLIBC else 'musl'
 
 def links(home, system):
     config = home / '.config'
@@ -46,13 +56,14 @@ def install_nu(home):
         raise SystemExit('Install Nushell with brew install nushell, then rerun install.sh.')
     machine = platform.machine()
     machine = {'arm64': 'aarch64', 'amd64': 'x86_64'}.get(machine, machine)
-    if machine not in DIGESTS:
+    flavor = libc_flavor()
+    if (machine, flavor) not in DIGESTS:
         raise SystemExit('Unsupported Linux architecture: ' + machine)
-    archive = f'nu-{VERSION}-{machine}-unknown-linux-gnu.tar.gz'
+    archive = f'nu-{VERSION}-{machine}-unknown-linux-{flavor}.tar.gz'
     url = f'https://github.com/nushell/nushell/releases/download/{VERSION}/{archive}'
     with urllib.request.urlopen(url, timeout=120) as response:
         data = response.read()
-    if hashlib.sha256(data).hexdigest() != DIGESTS[machine]:
+    if hashlib.sha256(data).hexdigest() != DIGESTS[(machine, flavor)]:
         raise SystemExit('Nushell download checksum failed.')
     target = home / '.local/bin/nu'
     target.parent.mkdir(parents=True, exist_ok=True)
@@ -61,7 +72,26 @@ def install_nu(home):
         with bundle.extractfile(member) as source, target.open('wb') as output:
             shutil.copyfileobj(source, output)
     target.chmod(0o755)
-    print(f'Installed checksum-verified Nushell {VERSION}.')
+    print(f'Installed checksum-verified Nushell {VERSION} ({flavor}).')
+
+RHEL_PACKAGES = ['git', 'which']  # cat ships with every RHEL image (coreutils or coreutils-single)
+GH_REPO_URL = 'https://cli.github.com/packages/rpm/gh-cli.repo'
+
+def is_rhel(release=Path('/etc/redhat-release')):
+    return release.is_file() and shutil.which('dnf') is not None
+
+def install_rhel_packages(run=subprocess.run, fetch=None):
+    """Install git, which and the GitHub CLI with dnf on RHEL (including RHEL on WSL)."""
+    sudo = [] if os.geteuid() == 0 else ['sudo']
+    run(sudo + ['dnf', 'install', '-y'] + RHEL_PACKAGES, check=True)
+    if shutil.which('gh'):
+        return
+    if fetch is None:
+        fetch = lambda url: urllib.request.urlopen(url, timeout=60).read()
+    repo = fetch(GH_REPO_URL)
+    run(sudo + ['tee', '/etc/yum.repos.d/gh-cli.repo'], input=repo, stdout=subprocess.DEVNULL, check=True)
+    run(sudo + ['dnf', 'install', '-y', 'gh'], check=True)
+    print('Installed git, which and gh with dnf.')
 
 def main():
     parser = argparse.ArgumentParser()
@@ -82,6 +112,8 @@ def main():
         marker = home / '.local/state/dotfiles/xponent-profile-path'
         marker.parent.mkdir(parents=True, exist_ok=True)
         marker.write_text(str(profile) + '\n')
+    if args.install_tools and args.platform == 'Linux' and is_rhel():
+        install_rhel_packages()
     if args.install_tools or (os.environ.get('CODESPACES') == 'true' and not args.check):
         install_nu(home)
     backup = home / '.local/state/dotfiles/backups' / datetime.datetime.now().strftime('%Y%m%d-%H%M%S-%f')

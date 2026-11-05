@@ -45,5 +45,23 @@ class InstallerTest(unittest.TestCase):
             self.assertEqual(self.run_install(home, 'Linux', '--check').returncode, 1)
             self.assertEqual(target.read_text(), '# unmanaged edit')
 
+    def test_rhel_packages_install_git_which_and_gh(self):
+        spec = importlib.util.spec_from_file_location('install', ROOT / 'scripts/install.py')
+        install = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(install)
+        calls = []
+        original = install.shutil.which
+        install.shutil.which = lambda name: None
+        try:
+            install.install_rhel_packages(run=lambda cmd, **kw: calls.append(cmd), fetch=lambda url: b'[gh-cli]\n')
+        finally:
+            install.shutil.which = original
+        commands = [' '.join(c) for c in calls]
+        self.assertTrue(any('dnf install -y git which' in c for c in commands))
+        self.assertTrue(any('tee /etc/yum.repos.d/gh-cli.repo' in c for c in commands))
+        self.assertTrue(commands[-1].endswith('dnf install -y gh'))
+        with tempfile.TemporaryDirectory() as directory:
+            self.assertFalse(install.is_rhel(Path(directory) / 'redhat-release'))
+
 if __name__ == '__main__':
     unittest.main()
