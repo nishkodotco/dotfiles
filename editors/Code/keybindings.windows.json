@@ -64,7 +64,8 @@
   {"key": "ctrl+/", "command": "editor.action.commentLine", "when": "editorTextFocus && !editorReadonly"},  // mac: cmd+/
   {"key": "ctrl+b", "command": "editor.action.formatDocument", "when": "editorTextFocus && !editorReadonly"},  // mac: cmd+b
   {"key": "ctrl+n", "command": "editor.action.addSelectionToNextFindMatch", "when": "editorFocus"},  // mac: cmd+n
-  {"key": "ctrl+l", "command": "editor.action.selectHighlights", "when": "editorFocus"},  // mac: cmd+l
+  {"key": "ctrl+l", "command": "workbench.debug.action.toggleRepl"},  // mac: cmd+l
+  {"key": "ctrl+l", "command": "runCommands", "when": "auxiliaryBarVisible && focusedView == 'workbench.panel.repl.view'", "args": {"commands": ["workbench.action.closeAuxiliaryBar", "workbench.action.focusActiveEditorGroup"]}},  // mac: cmd+l
   {"key": "ctrl+[", "command": "editor.fold", "when": "editorTextFocus"},  // mac: cmd+[
   {"key": "ctrl+]", "command": "editor.unfold", "when": "editorTextFocus"},  // mac: cmd+]
   {"key": "ctrl+d", "command": "runCommands", "when": "editorTextFocus", "args": {"commands": ["editor.action.triggerParameterHints", {"command": "editor.action.showHover", "args": {"focus": "autoFocusImmediately"}}]}},  // mac: cmd+d

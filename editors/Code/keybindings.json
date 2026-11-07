@@ -89,7 +89,8 @@
   {"key": "cmd+/", "command": "editor.action.commentLine", "when": "editorTextFocus && !editorReadonly"},
   {"key": "cmd+b", "command": "editor.action.formatDocument", "when": "editorTextFocus && !editorReadonly"},
   {"key": "cmd+n", "command": "editor.action.addSelectionToNextFindMatch", "when": "editorFocus"},
-  {"key": "cmd+l", "command": "editor.action.selectHighlights", "when": "editorFocus"},
+  {"key": "cmd+l", "command": "workbench.debug.action.toggleRepl"}, // Debug Console (lives in the right side bar)
+  {"key": "cmd+l", "command": "runCommands", "when": "auxiliaryBarVisible && focusedView == 'workbench.panel.repl.view'", "args": {"commands": ["workbench.action.closeAuxiliaryBar", "workbench.action.focusActiveEditorGroup"]}}, // press again: close the right side bar
   // {"key": "cmd+o", "command": "editor.action.sortLinesAscending", "when": "editorTextFocus && !editorReadonly"}, // replaced by Cmd+O = Output below
   {"key": "cmd+[", "command": "editor.fold", "when": "editorTextFocus"},
   {"key": "cmd+]", "command": "editor.unfold", "when": "editorTextFocus"},
