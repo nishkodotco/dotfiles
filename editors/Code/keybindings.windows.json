@@ -144,8 +144,6 @@
   {"key": "ctrl+shift+up", "command": "workbench.action.previousSideBarView"},  // mac: shift+cmd+up
   {"key": "ctrl+shift+up", "command": "-cursorTopSelect", "when": "textInputFocus"},  // mac: shift+cmd+up
   {"key": "ctrl+shift+down", "command": "workbench.action.nextSideBarView"},  // mac: shift+cmd+down
-  {"key": "ctrl+shift+up", "command": "workbench.action.previousAuxiliaryBarView", "when": "auxiliaryBarFocus"},  // mac: shift+cmd+up
-  {"key": "ctrl+shift+down", "command": "workbench.action.nextAuxiliaryBarView", "when": "auxiliaryBarFocus"},  // mac: shift+cmd+down
   {"key": "ctrl+shift+down", "command": "-cursorBottomSelect", "when": "textInputFocus"},  // mac: shift+cmd+down
   {"key": "f5", "command": "workbench.action.debug.start"},  // mac: cmd+ctrl+b
   {"key": "ctrl+shift+alt+g", "command": "workbench.view.scm"},  // mac: cmd+ctrl+shift+g
