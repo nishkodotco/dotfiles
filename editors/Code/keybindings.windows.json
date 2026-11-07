@@ -24,6 +24,9 @@
   {"key": "ctrl+shift+n", "command": "workbench.action.newWindow"},  // mac: cmd+shift+n
   {"key": "ctrl+shift+r", "command": "workbench.action.reloadWindow"},  // mac: cmd+shift+r
   {"key": "ctrl+shift+;", "command": "runCommands", "args": {"commands": ["workbench.action.files.saveAll", "workbench.action.reloadWindow"]}},  // mac: cmd+shift+;
+  {"key": "ctrl+=", "command": "workbench.action.zoomIn", "when": "!editorFocus && !notebookEditorFocused && !terminalFocus"},  // mac: cmd+=
+  {"key": "ctrl+-", "command": "workbench.action.zoomOut", "when": "!editorFocus && !notebookEditorFocused && !terminalFocus"},  // mac: cmd+-
+  {"key": "ctrl+0", "command": "workbench.action.zoomReset", "when": "!editorFocus && !notebookEditorFocused && !terminalFocus"},  // mac: cmd+0
   {"key": "ctrl+=", "command": "editor.action.fontZoomIn", "when": "editorFocus || notebookEditorFocused"},  // mac: cmd+=
   {"key": "ctrl+-", "command": "editor.action.fontZoomOut", "when": "editorFocus || notebookEditorFocused"},  // mac: cmd+-
   {"key": "ctrl+0", "command": "editor.action.fontZoomReset", "when": "editorFocus || notebookEditorFocused"},  // mac: cmd+0
@@ -631,10 +634,8 @@
   {"key": "ctrl+k shift+enter", "command": "-workbench.action.unpinEditor", "when": "activeEditorIsPinned"},  // mac: cmd+k shift+enter
   {"key": "ctrl+numpad_add", "command": "-workbench.action.zoomIn"},  // mac: cmd+numpad_add
   {"key": "ctrl+shift+=", "command": "-workbench.action.zoomIn"},  // mac: shift+cmd+=
-  {"key": "ctrl+=", "command": "-workbench.action.zoomIn"},  // mac: cmd+=
   {"key": "ctrl+numpad_subtract", "command": "-workbench.action.zoomOut"},  // mac: cmd+numpad_subtract
   {"key": "ctrl+shift+-", "command": "-workbench.action.zoomOut"},  // mac: shift+cmd+-
-  {"key": "ctrl+-", "command": "-workbench.action.zoomOut"},  // mac: cmd+-
   {"key": "ctrl+numpad0", "command": "-workbench.action.zoomReset"},  // mac: cmd+numpad0
   {"key": "ctrl+shift+m", "command": "-workbench.actions.view.problems", "when": "workbench.panel.markers.view.active"},  // mac: shift+cmd+m
   {"key": "ctrl+shift+y", "command": "-workbench.debug.action.toggleRepl", "when": "workbench.panel.repl.view.active"},  // mac: shift+cmd+y
