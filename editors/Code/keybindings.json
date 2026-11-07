@@ -193,6 +193,8 @@
   {"key": "shift+cmd+up", "command": "workbench.action.previousSideBarView"},
   {"key": "shift+cmd+up", "command": "-cursorTopSelect", "when": "textInputFocus"}, // select-to-top freed; give it a new key later
   {"key": "shift+cmd+down", "command": "workbench.action.nextSideBarView"},
+  {"key": "shift+cmd+up", "command": "workbench.action.previousAuxiliaryBarView", "when": "auxiliaryBarFocus"}, // in the right side bar: cycle its views (Terminal, Output, Problems, Debug Console, Ports)
+  {"key": "shift+cmd+down", "command": "workbench.action.nextAuxiliaryBarView", "when": "auxiliaryBarFocus"},
   {"key": "shift+cmd+down", "command": "-cursorBottomSelect", "when": "textInputFocus"}, // select-to-bottom freed; give it a new key later
   {"key": "cmd+ctrl+b", "command": "workbench.action.debug.start"},
   // --- Git ---
