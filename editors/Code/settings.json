@@ -26,6 +26,7 @@
   "terminal.integrated.defaultProfile.linux": "zsh",
   "terminal.integrated.enableImages": true,
   "terminal.integrated.enableMultiLinePasteWarning": "never",
+  "terminal.integrated.commandsToSkipShell": ["workbench.action.previousSideBarView", "workbench.action.nextSideBarView"],
   "editor.fontFamily": "'JetBrainsMono Nerd Font'",
   "editor.wordWrap": "on",
   "files.exclude": {
