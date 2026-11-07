@@ -120,8 +120,9 @@
   {"key": "ctrl+alt+e", "command": "workbench.action.tasks.reRunTask"},  // mac: cmd+ctrl+e
   {"key": "ctrl+alt+k", "command": "workbench.action.tasks.terminate"},  // mac: cmd+ctrl+k
   {"key": "ctrl+alt+n", "command": "workbench.action.terminal.new"},  // mac: cmd+ctrl+n
-  {"key": "ctrl+t", "command": "workbench.action.createTerminalEditor"},  // mac: cmd+t
+  {"key": "ctrl+t", "command": "workbench.action.terminal.focus"},  // mac: cmd+t
   {"key": "ctrl+t", "command": "openInIntegratedTerminal", "when": "filesExplorerFocus && !inputFocus"},  // mac: cmd+t
+  {"key": "ctrl+t", "command": "runCommands", "when": "terminalFocus && !terminalEditorFocus && auxiliaryBarVisible", "args": {"commands": ["workbench.action.closeAuxiliaryBar", "workbench.action.focusActiveEditorGroup"]}},  // mac: cmd+t
   {"key": "ctrl+shift+t", "command": "openInIntegratedTerminal", "when": "filesExplorerFocus && !inputFocus"},  // mac: shift+cmd+t
   {"key": "ctrl+shift+t", "command": "workbench.action.terminal.new", "when": "!filesExplorerFocus || inputFocus"},  // mac: shift+cmd+t
   {"key": "ctrl+o", "command": "workbench.action.output.toggleOutput"},  // mac: cmd+o
