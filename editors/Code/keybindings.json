@@ -38,6 +38,9 @@
   {"key": "cmd+=", "command": "workbench.action.zoomIn", "when": "!editorFocus && !notebookEditorFocused && !terminalFocus"},
   {"key": "cmd+-", "command": "workbench.action.zoomOut", "when": "!editorFocus && !notebookEditorFocused && !terminalFocus"},
   {"key": "cmd+0", "command": "workbench.action.zoomReset", "when": "!editorFocus && !notebookEditorFocused && !terminalFocus"},
+  // --- Width: Cmd+Right / Cmd+Left widen or narrow the focused part (Explorer, panel, editor area). In text, inputs and the terminal they keep moving the cursor. ---
+  {"key": "cmd+right", "command": "workbench.action.increaseViewWidth", "when": "!textInputFocus && !terminalFocus"},
+  {"key": "cmd+left", "command": "workbench.action.decreaseViewWidth", "when": "!textInputFocus && !terminalFocus"},
   {"key": "cmd+=", "command": "editor.action.fontZoomIn", "when": "editorFocus || notebookEditorFocused"},
   {"key": "cmd+-", "command": "editor.action.fontZoomOut", "when": "editorFocus || notebookEditorFocused"},
   {"key": "cmd+0", "command": "editor.action.fontZoomReset", "when": "editorFocus || notebookEditorFocused"},
