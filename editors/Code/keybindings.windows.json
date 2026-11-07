@@ -48,7 +48,6 @@
   {"key": "ctrl+alt+2", "command": "workbench.action.focusSecondEditorGroup"},  // mac: cmd+alt+2
   {"key": "ctrl+alt+3", "command": "workbench.action.focusThirdEditorGroup"},  // mac: cmd+alt+3
   {"key": "ctrl+alt+b", "command": "workbench.action.toggleSidebarVisibility"},  // mac: cmd+alt+b
-  {"key": "ctrl+alt+j", "command": "workbench.action.togglePanel"},  // mac: cmd+alt+j
   {"key": "ctrl+alt+z", "command": "workbench.action.toggleZenMode"},  // mac: cmd+alt+z
   {"key": "shift+alt+e", "command": "workbench.view.explorer"},  // mac: ctrl+alt+e
   {"key": "shift+alt+n", "command": "explorer.newFile"},  // mac: ctrl+alt+n
@@ -120,7 +119,6 @@
   {"key": "ctrl+shift+alt+t", "command": "workbench.action.tasks.runTask"},  // mac: cmd+ctrl+t
   {"key": "ctrl+alt+e", "command": "workbench.action.tasks.reRunTask"},  // mac: cmd+ctrl+e
   {"key": "ctrl+alt+k", "command": "workbench.action.tasks.terminate"},  // mac: cmd+ctrl+k
-  {"key": "ctrl+alt+`", "command": "workbench.action.terminal.toggleTerminal"},  // mac: cmd+ctrl+`
   {"key": "ctrl+alt+n", "command": "workbench.action.terminal.new"},  // mac: cmd+ctrl+n
   {"key": "ctrl+t", "command": "workbench.action.createTerminalEditor"},  // mac: cmd+t
   {"key": "ctrl+t", "command": "openInIntegratedTerminal", "when": "filesExplorerFocus && !inputFocus"},  // mac: cmd+t
@@ -154,7 +152,6 @@
   {"key": "ctrl+shift+alt+s", "command": "simpleBrowser.show", "args": "http://localhost:54323"},  // mac: cmd+ctrl+alt+s
   {"key": "ctrl+shift+alt+a", "command": "simpleBrowser.show", "args": "http://localhost:18888"},  // mac: cmd+ctrl+alt+a
   {"key": "alt+`", "command": "-workbench.action.terminal.toggleTerminal"},  // mac: ctrl+`
-  {"key": "alt+`", "command": "workbench.action.createTerminalEditor"},  // mac: ctrl+`
   {"key": "alt+n", "command": "-cursorDown", "when": "textInputFocus"},  // mac: ctrl+n
   {"key": "alt+b", "command": "-cursorLeft", "when": "textInputFocus"},  // mac: ctrl+b
   {"key": "alt+e", "command": "-cursorLineEnd", "when": "textInputFocus"},  // mac: ctrl+e

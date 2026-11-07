@@ -69,7 +69,6 @@
   {"key": "cmd+alt+2", "command": "workbench.action.focusSecondEditorGroup"},
   {"key": "cmd+alt+3", "command": "workbench.action.focusThirdEditorGroup"},
   {"key": "cmd+alt+b", "command": "workbench.action.toggleSidebarVisibility"},
-  {"key": "cmd+alt+j", "command": "workbench.action.togglePanel"},
   {"key": "cmd+alt+z", "command": "workbench.action.toggleZenMode"},
   // --- File manager ---
   {"key": "ctrl+alt+e", "command": "workbench.view.explorer"},
@@ -159,7 +158,6 @@
   {"key": "cmd+ctrl+t", "command": "workbench.action.tasks.runTask"},
   {"key": "cmd+ctrl+e", "command": "workbench.action.tasks.reRunTask"},
   {"key": "cmd+ctrl+k", "command": "workbench.action.tasks.terminate"},
-  {"key": "cmd+ctrl+`", "command": "workbench.action.terminal.toggleTerminal"},
   {"key": "cmd+ctrl+n", "command": "workbench.action.terminal.new"},
   // --- Panel keys: press once to open, press again to close and go back to the editor ---
   {"key": "cmd+t", "command": "workbench.action.createTerminalEditor"}, // new terminal as an editor tab
@@ -204,7 +202,6 @@
   {"key": "ctrl+alt+o", "command": "workbench.action.files.openFileFolder", "when": "isMacNative && openFolderWorkspaceSupport"}, // kept from old file
   {"key": "cmd+o", "command": "-workbench.action.files.openFileFolder", "when": "isMacNative && openFolderWorkspaceSupport"}, // kept from old file
   {"key": "ctrl+`", "command": "-workbench.action.terminal.toggleTerminal"}, // kept from old file
-  {"key": "ctrl+`", "command": "workbench.action.createTerminalEditor"}, // kept from old file
   // ===== Part 2: remove other VS Code 1.144.0 macOS defaults (631 entries) =====
   {"key": "ctrl+n", "command": "-cursorDown", "when": "textInputFocus"},
   {"key": "ctrl+b", "command": "-cursorLeft", "when": "textInputFocus"},
