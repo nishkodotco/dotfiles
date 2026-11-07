@@ -34,9 +34,9 @@
   {"key": "cmd+shift+r", "command": "workbench.action.reloadWindow"},
   {"key": "cmd+shift+;", "command": "runCommands", "args": {"commands": ["workbench.action.files.saveAll", "workbench.action.reloadWindow"]}},
   // --- Zoom: Cmd+= / Cmd+- / Cmd+0 change the editor font when an editor or notebook has focus, and the terminal font in the terminal. Anywhere else they zoom the whole window. ---
-  {"key": "cmd+=", "command": "workbench.action.zoomIn", "when": "!editorFocus && !notebookEditorFocused && !terminalFocus"},
-  {"key": "cmd+-", "command": "workbench.action.zoomOut", "when": "!editorFocus && !notebookEditorFocused && !terminalFocus"},
-  {"key": "cmd+0", "command": "workbench.action.zoomReset", "when": "!editorFocus && !notebookEditorFocused && !terminalFocus"},
+  {"key": "cmd+=", "command": "workbench.action.zoomIn", "when": "(!editorFocus || notebookEditorFocused) && !terminalFocus"},
+  {"key": "cmd+-", "command": "workbench.action.zoomOut", "when": "(!editorFocus || notebookEditorFocused) && !terminalFocus"},
+  {"key": "cmd+0", "command": "workbench.action.zoomReset", "when": "(!editorFocus || notebookEditorFocused) && !terminalFocus"},
   // --- Width: Cmd+Right widens the focused part, Cmd+Left narrows it, everywhere it applies:
   //     any side bar view (Explorer, Search, Source Control, Extensions, ... and the secondary side bar), even when its search or commit box has focus,
   //     and the editor area (tabs, browser tabs) when no text has focus.
@@ -50,9 +50,9 @@
   {"key": "cmd+left", "command": "workbench.action.increaseViewSize", "when": "auxiliaryBarFocus"},
   {"key": "cmd+right", "command": "workbench.action.increaseViewWidth", "when": "!sideBarFocus && !auxiliaryBarFocus && !textInputFocus && !terminalFocus"},
   {"key": "cmd+left", "command": "workbench.action.decreaseViewWidth", "when": "!sideBarFocus && !auxiliaryBarFocus && !textInputFocus && !terminalFocus"},
-  {"key": "cmd+=", "command": "editor.action.fontZoomIn", "when": "editorFocus || notebookEditorFocused"},
-  {"key": "cmd+-", "command": "editor.action.fontZoomOut", "when": "editorFocus || notebookEditorFocused"},
-  {"key": "cmd+0", "command": "editor.action.fontZoomReset", "when": "editorFocus || notebookEditorFocused"},
+  {"key": "cmd+=", "command": "editor.action.fontZoomIn", "when": "editorFocus && !notebookEditorFocused"},
+  {"key": "cmd+-", "command": "editor.action.fontZoomOut", "when": "editorFocus && !notebookEditorFocused"},
+  {"key": "cmd+0", "command": "editor.action.fontZoomReset", "when": "editorFocus && !notebookEditorFocused"},
   {"key": "cmd+=", "command": "workbench.action.terminal.fontZoomIn", "when": "terminalFocus"},
   {"key": "cmd+-", "command": "workbench.action.terminal.fontZoomOut", "when": "terminalFocus"},
   {"key": "cmd+0", "command": "workbench.action.terminal.fontZoomReset", "when": "terminalFocus"},
