@@ -111,12 +111,11 @@
   {"key": "up", "command": "editor.action.scrollUpHover", "when": "editorHoverFocused"},
   // {"key": "cmd+d", "command": "editor.action.deleteLines", "when": "editorTextFocus && !editorReadonly"}, // disabled: Cmd+D is now docs; Delete Line has no shortcut
   {"key": "cmd+d", "command": "moveFileToTrash", "when": "filesExplorerFocus && !inputFocus"}, // Cmd+D in the Explorer: move to Trash (docs in the editor)
-  // --- New file / folder: Cmd+N = new file, Cmd+Shift+N = new folder. In the Explorer they go in the selected folder;
-  //     in an open file they go next to that file (the Explorer opens on it and asks for the name). Cmd+Shift+N elsewhere still opens a new window. ---
+  // --- New file / folder. Cmd+N = new file (in the Explorer: in the selected folder; in an open file: next to that file).
+  //     Cmd+F in the Explorer = new folder in the selected folder (in a file Cmd+F is still Find). Both ask for the name. ---
   {"key": "cmd+n", "command": "explorer.newFile", "when": "filesExplorerFocus && !inputFocus"},
   {"key": "cmd+n", "command": "runCommands", "when": "editorFocus && !filesExplorerFocus", "args": {"commands": ["workbench.files.action.showActiveFileInExplorer", "explorer.newFile"]}},
-  {"key": "shift+cmd+n", "command": "explorer.newFolder", "when": "filesExplorerFocus && !inputFocus"},
-  {"key": "shift+cmd+n", "command": "runCommands", "when": "editorFocus && !filesExplorerFocus", "args": {"commands": ["workbench.files.action.showActiveFileInExplorer", "explorer.newFolder"]}},
+  {"key": "cmd+f", "command": "explorer.newFolder", "when": "filesExplorerFocus && !inputFocus"},
   {"key": "cmd+r", "command": "editor.action.rename", "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"},
   {"key": "cmd+r", "command": "renameFile", "when": "filesExplorerFocus && !inputFocus"},
   {"key": "shift+cmd+m", "command": "list.toggleExpand", "when": "filesExplorerFocus && explorerResourceIsFolder && !inputFocus"}, // Explorer: open/close the selected folder (does nothing on files)
