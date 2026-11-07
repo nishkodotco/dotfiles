@@ -62,6 +62,7 @@
   {"key": "ctrl+j", "command": "editor.action.joinLines", "when": "editorTextFocus && !editorReadonly"},  // mac: cmd+j
   {"key": "ctrl+/", "command": "editor.action.commentLine", "when": "editorTextFocus && !editorReadonly"},  // mac: cmd+/
   {"key": "ctrl+b", "command": "editor.action.formatDocument", "when": "editorTextFocus && !editorReadonly"},  // mac: cmd+b
+  {"key": "ctrl+n", "command": "editor.action.addSelectionToNextFindMatch", "when": "editorFocus"},  // mac: cmd+n
   {"key": "ctrl+shift+d", "command": "workbench.debug.action.toggleRepl"},  // mac: shift+cmd+d
   {"key": "ctrl+shift+d", "command": "runCommands", "when": "auxiliaryBarVisible && focusedView == 'workbench.panel.repl.view'", "args": {"commands": ["workbench.action.closeAuxiliaryBar", "workbench.action.focusActiveEditorGroup"]}},  // mac: shift+cmd+d
   {"key": "ctrl+[", "command": "editor.fold", "when": "editorTextFocus"},  // mac: cmd+[
@@ -77,9 +78,6 @@
   {"key": "down", "command": "editor.action.scrollDownHover", "when": "editorHoverFocused"},  // mac: down
   {"key": "up", "command": "editor.action.scrollUpHover", "when": "editorHoverFocused"},  // mac: up
   {"key": "ctrl+d", "command": "moveFileToTrash", "when": "filesExplorerFocus && !inputFocus"},  // mac: cmd+d
-  {"key": "ctrl+n", "command": "explorer.newFile", "when": "filesExplorerFocus && !inputFocus"},  // mac: cmd+n
-  {"key": "ctrl+n", "command": "runCommands", "when": "editorFocus && !filesExplorerFocus", "args": {"commands": ["workbench.files.action.showActiveFileInExplorer", "explorer.newFile"]}},  // mac: cmd+n
-  {"key": "ctrl+f", "command": "explorer.newFolder", "when": "filesExplorerFocus && !inputFocus"},  // mac: cmd+f
   {"key": "ctrl+r", "command": "editor.action.rename", "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"},  // mac: cmd+r
   {"key": "ctrl+r", "command": "renameFile", "when": "filesExplorerFocus && !inputFocus"},  // mac: cmd+r
   {"key": "ctrl+shift+m", "command": "list.toggleExpand", "when": "filesExplorerFocus && explorerResourceIsFolder && !inputFocus"},  // mac: shift+cmd+m
