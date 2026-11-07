@@ -170,8 +170,13 @@
   {"key": "cmd+o", "command": "runCommands", "when": "panelVisible && activePanel == 'workbench.panel.output'", "args": {"commands": ["workbench.action.closePanel", "workbench.action.focusActiveEditorGroup"]}},
   {"key": "cmd+p", "command": "~remote.forwardedPorts.focus"},
   {"key": "cmd+p", "command": "runCommands", "when": "panelVisible && activePanel == '~remote.forwardedPortsContainer'", "args": {"commands": ["workbench.action.closePanel", "workbench.action.focusActiveEditorGroup"]}},
-  {"key": "cmd+e", "command": "workbench.action.focusActiveEditorGroup"},
-  {"key": "cmd+e", "command": "workbench.files.action.focusFilesExplorer", "when": "editorFocus || notebookEditorFocused || terminalFocus"},
+  // --- Esc in a file: jump to that file in the Explorer (Enter there opens it again). Esc still closes suggestions, hovers, rename and multi-cursor first.
+  //     In a notebook, Esc first leaves the cell; a second Esc jumps to the Explorer. ---
+  {"key": "escape", "command": "workbench.files.action.showActiveFileInExplorer", "when": "editorTextFocus && !notebookEditorFocused && !suggestWidgetVisible && !findWidgetVisible && !inlineSuggestionVisible && !parameterHintsVisible && !editorHoverVisible && !renameInputVisible && !inSnippetMode && !editorHasMultipleSelections && !hasOtherSuggestions && !inReferenceSearchEditor && !referenceSearchVisible && !isInEmbeddedEditor && !inQuickInput"},
+  {"key": "escape", "command": "workbench.files.action.showActiveFileInExplorer", "when": "notebookEditorFocused && !inputFocus && !notebookOutputInputFocused && !findWidgetVisible"},
+  // --- Cmd+E in a file: run the whole file (Python file in the terminal, notebook: run all cells). ---
+  {"key": "cmd+e", "command": "python.execInTerminal", "when": "editorTextFocus && editorLangId == 'python' && !notebookEditorFocused"},
+  {"key": "cmd+e", "command": "notebook.execute", "when": "notebookEditorFocused"},
   // --- Sidebar: direct jumps, and Cmd+Shift+Up/Down to cycle through every sidebar view (incl. extensions) ---
   {"key": "shift+cmd+e", "command": "workbench.view.explorer"},
   {"key": "shift+cmd+e", "command": "runCommands", "when": "sideBarVisible && activeViewlet == 'workbench.view.explorer'", "args": {"commands": ["workbench.action.closeSidebar", "workbench.action.focusActiveEditorGroup"]}}, // press again: close Explorer, back to editor
