@@ -3,7 +3,6 @@
 // Regenerate after changing the Mac file: python3 scripts/make-windows-keybindings.py
 [
   {"key": "ctrl+shift+c", "command": "workbench.action.showCommands", "when": "!terminalFocus || !terminalTextSelected"},  // mac: shift+cmd+c
-  {"key": "ctrl+shift+p", "command": "workbench.profiles.actions.switchProfile"},  // mac: cmd+shift+p
   {"key": "ctrl+shift+s", "command": "workbench.action.openSettingsJson"},  // mac: cmd+shift+s
   {"key": "ctrl+shift+x", "command": "workbench.view.extensions"},  // mac: cmd+shift+x
   {"key": "ctrl+shift+o f", "command": "workbench.action.files.openFile"},  // mac: cmd+shift+o f
@@ -64,8 +63,8 @@
   {"key": "ctrl+/", "command": "editor.action.commentLine", "when": "editorTextFocus && !editorReadonly"},  // mac: cmd+/
   {"key": "ctrl+b", "command": "editor.action.formatDocument", "when": "editorTextFocus && !editorReadonly"},  // mac: cmd+b
   {"key": "ctrl+n", "command": "editor.action.addSelectionToNextFindMatch", "when": "editorFocus"},  // mac: cmd+n
-  {"key": "ctrl+l", "command": "workbench.debug.action.toggleRepl"},  // mac: cmd+l
-  {"key": "ctrl+l", "command": "runCommands", "when": "auxiliaryBarVisible && focusedView == 'workbench.panel.repl.view'", "args": {"commands": ["workbench.action.closeAuxiliaryBar", "workbench.action.focusActiveEditorGroup"]}},  // mac: cmd+l
+  {"key": "ctrl+shift+d", "command": "workbench.debug.action.toggleRepl"},  // mac: shift+cmd+d
+  {"key": "ctrl+shift+d", "command": "runCommands", "when": "auxiliaryBarVisible && focusedView == 'workbench.panel.repl.view'", "args": {"commands": ["workbench.action.closeAuxiliaryBar", "workbench.action.focusActiveEditorGroup"]}},  // mac: shift+cmd+d
   {"key": "ctrl+[", "command": "editor.fold", "when": "editorTextFocus"},  // mac: cmd+[
   {"key": "ctrl+]", "command": "editor.unfold", "when": "editorTextFocus"},  // mac: cmd+]
   {"key": "ctrl+d", "command": "runCommands", "when": "editorTextFocus", "args": {"commands": ["editor.action.triggerParameterHints", {"command": "editor.action.showHover", "args": {"focus": "autoFocusImmediately"}}]}},  // mac: cmd+d
@@ -128,8 +127,8 @@
   {"key": "ctrl+shift+t", "command": "runCommands", "when": "terminalFocus && !terminalEditorFocus && auxiliaryBarVisible", "args": {"commands": ["workbench.action.closeAuxiliaryBar", "workbench.action.focusActiveEditorGroup"]}},  // mac: shift+cmd+t
   {"key": "ctrl+o", "command": "workbench.action.output.toggleOutput"},  // mac: cmd+o
   {"key": "ctrl+o", "command": "runCommands", "when": "auxiliaryBarVisible && focusedView == 'workbench.panel.output'", "args": {"commands": ["workbench.action.closeAuxiliaryBar", "workbench.action.focusActiveEditorGroup"]}},  // mac: cmd+o
-  {"key": "ctrl+p", "command": "~remote.forwardedPorts.focus"},  // mac: cmd+p
-  {"key": "ctrl+p", "command": "runCommands", "when": "auxiliaryBarVisible && focusedView == '~remote.forwardedPorts'", "args": {"commands": ["workbench.action.closeAuxiliaryBar", "workbench.action.focusActiveEditorGroup"]}},  // mac: cmd+p
+  {"key": "ctrl+shift+p", "command": "~remote.forwardedPorts.focus"},  // mac: shift+cmd+p
+  {"key": "ctrl+shift+p", "command": "runCommands", "when": "auxiliaryBarVisible && focusedView == '~remote.forwardedPorts'", "args": {"commands": ["workbench.action.closeAuxiliaryBar", "workbench.action.focusActiveEditorGroup"]}},  // mac: shift+cmd+p
   {"key": "escape", "command": "workbench.files.action.showActiveFileInExplorer", "when": "editorTextFocus && !notebookEditorFocused && !suggestWidgetVisible && !findWidgetVisible && !inlineSuggestionVisible && !parameterHintsVisible && !editorHoverVisible && !renameInputVisible && !inSnippetMode && !editorHasMultipleSelections && !hasOtherSuggestions && !inReferenceSearchEditor && !referenceSearchVisible && !isInEmbeddedEditor && !inQuickInput"},  // mac: escape
   {"key": "escape", "command": "workbench.files.action.showActiveFileInExplorer", "when": "notebookEditorFocused && !inputFocus && !notebookOutputInputFocused && !findWidgetVisible"},  // mac: escape
   {"key": "ctrl+e", "command": "python.execInTerminal", "when": "editorTextFocus && editorLangId == 'python' && !notebookEditorFocused"},  // mac: cmd+e
