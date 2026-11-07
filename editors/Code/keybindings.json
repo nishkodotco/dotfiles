@@ -34,7 +34,13 @@
   {"key": "cmd+shift+n", "command": "workbench.action.newWindow"},
   {"key": "cmd+shift+r", "command": "workbench.action.reloadWindow"},
   {"key": "cmd+shift+;", "command": "runCommands", "args": {"commands": ["workbench.action.files.saveAll", "workbench.action.reloadWindow"]}},
-  // --- Zoom: Cmd+= / Cmd+- / Cmd+0 change the editor font when an editor or notebook has focus, and the terminal font in the terminal. They never zoom the window. ---
+  // --- Zoom: Cmd+= / Cmd+- / Cmd+0 change the editor font when an editor or notebook has focus, and the terminal font in the terminal.
+  //     In the side bar (Explorer, Search, ...) Cmd+= / Cmd+- widen or narrow it. Anywhere else they zoom the whole window. ---
+  {"key": "cmd+=", "command": "workbench.action.increaseViewWidth", "when": "sideBarFocus && !editorFocus && !terminalFocus"},
+  {"key": "cmd+-", "command": "workbench.action.decreaseViewWidth", "when": "sideBarFocus && !editorFocus && !terminalFocus"},
+  {"key": "cmd+=", "command": "workbench.action.zoomIn", "when": "!sideBarFocus && !editorFocus && !notebookEditorFocused && !terminalFocus"},
+  {"key": "cmd+-", "command": "workbench.action.zoomOut", "when": "!sideBarFocus && !editorFocus && !notebookEditorFocused && !terminalFocus"},
+  {"key": "cmd+0", "command": "workbench.action.zoomReset", "when": "!sideBarFocus && !editorFocus && !notebookEditorFocused && !terminalFocus"},
   {"key": "cmd+=", "command": "editor.action.fontZoomIn", "when": "editorFocus || notebookEditorFocused"},
   {"key": "cmd+-", "command": "editor.action.fontZoomOut", "when": "editorFocus || notebookEditorFocused"},
   {"key": "cmd+0", "command": "editor.action.fontZoomReset", "when": "editorFocus || notebookEditorFocused"},
@@ -676,10 +682,8 @@
   {"key": "cmd+k shift+enter", "command": "-workbench.action.unpinEditor", "when": "activeEditorIsPinned"},
   {"key": "cmd+numpad_add", "command": "-workbench.action.zoomIn"},
   {"key": "shift+cmd+=", "command": "-workbench.action.zoomIn"},
-  {"key": "cmd+=", "command": "-workbench.action.zoomIn"},
   {"key": "cmd+numpad_subtract", "command": "-workbench.action.zoomOut"},
   {"key": "shift+cmd+-", "command": "-workbench.action.zoomOut"},
-  {"key": "cmd+-", "command": "-workbench.action.zoomOut"},
   {"key": "cmd+numpad0", "command": "-workbench.action.zoomReset"},
   {"key": "shift+cmd+m", "command": "-workbench.actions.view.problems", "when": "workbench.panel.markers.view.active"},
   {"key": "shift+cmd+y", "command": "-workbench.debug.action.toggleRepl", "when": "workbench.panel.repl.view.active"},
