@@ -183,6 +183,7 @@
   // --- Cmd+E in a file: run the whole file (Python file in the terminal, notebook: run all cells). ---
   {"key": "cmd+e", "command": "python.execInTerminal", "when": "editorTextFocus && editorLangId == 'python' && !notebookEditorFocused"},
   {"key": "cmd+e", "command": "notebook.execute", "when": "notebookEditorFocused"},
+  {"key": "cmd+e", "command": "workbench.files.action.focusFilesExplorer", "when": "terminalFocus"}, // from a terminal: jump to the Explorer
   // --- Sidebar: direct jumps, and Cmd+Shift+Up/Down to cycle through every sidebar view (incl. extensions) ---
   {"key": "shift+cmd+e", "command": "workbench.view.explorer"},
   {"key": "shift+cmd+e", "command": "runCommands", "when": "sideBarVisible && activeViewlet == 'workbench.view.explorer'", "args": {"commands": ["workbench.action.closeSidebar", "workbench.action.focusActiveEditorGroup"]}}, // press again: close Explorer, back to editor
@@ -713,7 +714,6 @@
   {"key": "cmd+k e", "command": "-workbench.files.action.focusOpenEditorsView", "when": "workbench.explorer.openEditorsView.active"},
   {"key": "ctrl+cmd+i", "command": "-workbench.panel.chat", "when": "workbench.panel.chat.view.copilot.active"},
   {"key": "shift+cmd+d", "command": "-workbench.view.debug", "when": "viewContainer.workbench.view.debug.enabled"},
-  {"key": "shift+cmd+e", "command": "-workbench.view.explorer", "when": "viewContainer.workbench.view.explorer.enabled"},
   {"key": "shift+cmd+x", "command": "-workbench.view.extensions", "when": "viewContainer.workbench.view.extensions.enabled"},
   {"key": "ctrl+shift+g", "command": "-workbench.view.scm", "when": "workbench.scm.active"},
   {"key": "shift+cmd+f", "command": "-workbench.view.search", "when": "workbench.view.search.active && neverMatch =~ /doesNotMatch/"},
