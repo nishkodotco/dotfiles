@@ -12,11 +12,11 @@
   // {"key": "cmd+shift+k", "command": "workbench.action.files.openFolder"}, // replaced by Cmd+Shift+O, D
   {"key": "cmd+shift+x", "command": "workbench.view.extensions"},
   // {"key": "cmd+shift+o", "command": "workbench.profiles.actions.switchProfile"}, // replaced: Cmd+Shift+O = Open File
-  // Open: press Cmd+Shift+O, then F (file), D (folder), W (workspace) or R (recent)
-  {"key": "cmd+shift+o f", "command": "workbench.action.files.openFile"},
-  {"key": "cmd+shift+o d", "command": "workbench.action.files.openFolder"},
-  {"key": "cmd+shift+o w", "command": "workbench.action.openWorkspace"},
-  {"key": "cmd+shift+o r", "command": "workbench.action.openRecent"},
+  // Open: press Cmd+O, then F (file), D (folder), W (workspace) or R (recent)
+  {"key": "cmd+o f", "command": "workbench.action.files.openFile"},
+  {"key": "cmd+o d", "command": "workbench.action.files.openFolder"},
+  {"key": "cmd+o w", "command": "workbench.action.openWorkspace"},
+  {"key": "cmd+o r", "command": "workbench.action.openRecent"},
   // Layout: press Cmd+Shift+L, then an arrow (split the file that way) or Shift+arrow (move it there),
   // E (equal sizes), M (maximize/restore), J (join all splits)
   {"key": "cmd+shift+l right", "command": "workbench.action.splitEditorRight"},
@@ -172,8 +172,8 @@
   {"key": "shift+cmd+t", "command": "runCommands", "when": "terminalFocus && !terminalEditorFocus && auxiliaryBarVisible", "args": {"commands": ["workbench.action.closeAuxiliaryBar", "workbench.action.focusActiveEditorGroup"]}},
   // --- Output, Ports, Problems and Debug Console live in the right side bar. Each key opens its view there; pressing it again while that view has focus closes the right side bar.
   //     No shortcut opens the bottom panel. ---
-  {"key": "cmd+o", "command": "workbench.action.output.toggleOutput"},
-  {"key": "cmd+o", "command": "runCommands", "when": "auxiliaryBarVisible && focusedView == 'workbench.panel.output'", "args": {"commands": ["workbench.action.closeAuxiliaryBar", "workbench.action.focusActiveEditorGroup"]}},
+  {"key": "shift+cmd+o", "command": "workbench.action.output.toggleOutput"}, // Output (right side bar)
+  {"key": "shift+cmd+o", "command": "runCommands", "when": "auxiliaryBarVisible && focusedView == 'workbench.panel.output'", "args": {"commands": ["workbench.action.closeAuxiliaryBar", "workbench.action.focusActiveEditorGroup"]}},
   {"key": "shift+cmd+p", "command": "~remote.forwardedPorts.focus"},
   {"key": "shift+cmd+p", "command": "runCommands", "when": "auxiliaryBarVisible && focusedView == '~remote.forwardedPorts'", "args": {"commands": ["workbench.action.closeAuxiliaryBar", "workbench.action.focusActiveEditorGroup"]}},
   // --- Esc in a file: jump to that file in the Explorer (Enter there opens it again). Esc still closes suggestions, hovers, rename and multi-cursor first.
