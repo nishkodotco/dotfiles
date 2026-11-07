@@ -45,6 +45,9 @@
   // In the side bar VS Code's increase/decrease commands move the border the other way, so they are swapped here: Cmd+Right still makes the side bar wider.
   {"key": "cmd+right", "command": "workbench.action.decreaseViewWidth", "when": "(sideBarFocus || auxiliaryBarFocus) && !terminalFocus"},
   {"key": "cmd+left", "command": "workbench.action.increaseViewWidth", "when": "(sideBarFocus || auxiliaryBarFocus) && !terminalFocus"},
+  // Right side bar (Terminal, Output, Problems, Ports live there): Cmd+Right makes it narrower, Cmd+Left wider, also while its terminal has focus.
+  {"key": "cmd+right", "command": "workbench.action.decreaseViewWidth", "when": "auxiliaryBarFocus && terminalFocus"},
+  {"key": "cmd+left", "command": "workbench.action.increaseViewWidth", "when": "auxiliaryBarFocus && terminalFocus"},
   {"key": "cmd+right", "command": "workbench.action.increaseViewWidth", "when": "!sideBarFocus && !auxiliaryBarFocus && !textInputFocus && !terminalFocus"},
   {"key": "cmd+left", "command": "workbench.action.decreaseViewWidth", "when": "!sideBarFocus && !auxiliaryBarFocus && !textInputFocus && !terminalFocus"},
   {"key": "cmd+=", "command": "editor.action.fontZoomIn", "when": "editorFocus || notebookEditorFocused"},
