@@ -193,6 +193,10 @@
   {"key": "shift+cmd+up", "command": "workbench.action.previousSideBarView"},
   {"key": "shift+cmd+up", "command": "-cursorTopSelect", "when": "textInputFocus"}, // select-to-top freed; give it a new key later
   {"key": "shift+cmd+down", "command": "workbench.action.nextSideBarView"},
+  // --- In a terminal: Cmd+Up / Cmd+Down switch to the previous / next open terminal, Cmd+W closes the current terminal. ---
+  {"key": "cmd+up", "command": "workbench.action.terminal.focusPrevious", "when": "terminalFocus"},
+  {"key": "cmd+down", "command": "workbench.action.terminal.focusNext", "when": "terminalFocus"},
+  {"key": "cmd+w", "command": "workbench.action.terminal.kill", "when": "terminalFocus"},
   {"key": "shift+cmd+down", "command": "-cursorBottomSelect", "when": "textInputFocus"}, // select-to-bottom freed; give it a new key later
   {"key": "cmd+ctrl+b", "command": "workbench.action.debug.start"},
   // --- Git ---
