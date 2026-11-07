@@ -165,8 +165,12 @@
   {"key": "cmd+t", "command": "openInIntegratedTerminal", "when": "filesExplorerFocus && !inputFocus"}, // in the Explorer: new terminal tab at the selected file's folder
   {"key": "shift+cmd+t", "command": "openInIntegratedTerminal", "when": "filesExplorerFocus && !inputFocus"}, // same, on Cmd+Shift+T
   {"key": "shift+cmd+t", "command": "workbench.action.terminal.new", "when": "!filesExplorerFocus || inputFocus"}, // anywhere else: new terminal at the workspace folder
-  {"key": "cmd+o", "command": "runCommands", "when": "panelVisible && activePanel == 'workbench.panel.output'", "args": {"commands": ["workbench.action.closePanel", "workbench.action.focusActiveEditorGroup"]}},
-  {"key": "cmd+p", "command": "runCommands", "when": "panelVisible && activePanel == '~remote.forwardedPortsContainer'", "args": {"commands": ["workbench.action.closePanel", "workbench.action.focusActiveEditorGroup"]}},
+  // --- Output, Ports, Problems and Debug Console live in the right side bar. Each key opens its view there; pressing it again while that view has focus closes the right side bar.
+  //     No shortcut opens the bottom panel. ---
+  {"key": "cmd+o", "command": "workbench.action.output.toggleOutput"},
+  {"key": "cmd+o", "command": "runCommands", "when": "auxiliaryBarVisible && focusedView == 'workbench.panel.output'", "args": {"commands": ["workbench.action.closeAuxiliaryBar", "workbench.action.focusActiveEditorGroup"]}},
+  {"key": "cmd+p", "command": "~remote.forwardedPorts.focus"},
+  {"key": "cmd+p", "command": "runCommands", "when": "auxiliaryBarVisible && focusedView == '~remote.forwardedPorts'", "args": {"commands": ["workbench.action.closeAuxiliaryBar", "workbench.action.focusActiveEditorGroup"]}},
   // --- Esc in a file: jump to that file in the Explorer (Enter there opens it again). Esc still closes suggestions, hovers, rename and multi-cursor first.
   //     In a notebook, Esc first leaves the cell; a second Esc jumps to the Explorer. ---
   {"key": "escape", "command": "workbench.files.action.showActiveFileInExplorer", "when": "editorTextFocus && !notebookEditorFocused && !suggestWidgetVisible && !findWidgetVisible && !inlineSuggestionVisible && !parameterHintsVisible && !editorHoverVisible && !renameInputVisible && !inSnippetMode && !editorHasMultipleSelections && !hasOtherSuggestions && !inReferenceSearchEditor && !referenceSearchVisible && !isInEmbeddedEditor && !inQuickInput"},
