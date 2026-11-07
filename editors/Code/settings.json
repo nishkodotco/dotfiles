@@ -26,7 +26,7 @@
   "terminal.integrated.defaultProfile.linux": "zsh",
   "terminal.integrated.enableImages": true,
   "terminal.integrated.enableMultiLinePasteWarning": "never",
-  "terminal.integrated.commandsToSkipShell": ["workbench.action.previousSideBarView", "workbench.action.nextSideBarView", "workbench.action.terminal.new", "workbench.action.terminal.focus", "runCommands", "workbench.action.increaseViewWidth", "workbench.action.decreaseViewWidth", "workbench.debug.action.toggleRepl"],
+  "terminal.integrated.commandsToSkipShell": ["workbench.action.previousSideBarView", "workbench.action.nextSideBarView", "workbench.action.terminal.new", "workbench.action.terminal.focus", "runCommands", "workbench.action.increaseViewWidth", "workbench.action.decreaseViewWidth", "workbench.debug.action.toggleRepl", "workbench.action.increaseViewSize", "workbench.action.decreaseViewSize"],
   "editor.fontFamily": "'JetBrainsMono Nerd Font'",
   "editor.wordWrap": "on",
   "files.exclude": {

@@ -42,12 +42,13 @@
   //     any side bar view (Explorer, Search, Source Control, Extensions, ... and the secondary side bar), even when its search or commit box has focus,
   //     and the editor area (tabs, browser tabs) when no text has focus.
   //     In editor text, other inputs and the terminal they keep moving the cursor. Hold the key to keep resizing. ---
-  // In the side bar VS Code's increase/decrease commands move the border the other way, so they are swapped here: Cmd+Right still makes the side bar wider.
-  {"key": "cmd+right", "command": "workbench.action.decreaseViewWidth", "when": "(sideBarFocus || auxiliaryBarFocus) && !terminalFocus"},
-  {"key": "cmd+left", "command": "workbench.action.increaseViewWidth", "when": "(sideBarFocus || auxiliaryBarFocus) && !terminalFocus"},
-  // Right side bar (Terminal, Output, Problems, Ports live there): Cmd+Right makes it narrower, Cmd+Left wider, also while its terminal has focus.
-  {"key": "cmd+right", "command": "workbench.action.decreaseViewWidth", "when": "auxiliaryBarFocus && terminalFocus"},
-  {"key": "cmd+left", "command": "workbench.action.increaseViewWidth", "when": "auxiliaryBarFocus && terminalFocus"},
+  // Left side bar: increase/decreaseViewWidth always resize the editor, so Cmd+Right shrinks the editor, which widens the left side bar.
+  {"key": "cmd+right", "command": "workbench.action.decreaseViewWidth", "when": "sideBarFocus && !auxiliaryBarFocus && !terminalFocus"},
+  {"key": "cmd+left", "command": "workbench.action.increaseViewWidth", "when": "sideBarFocus && !auxiliaryBarFocus && !terminalFocus"},
+  // Right side bar (Terminal, Output, Problems, Debug Console, Ports): Cmd+Right makes it narrower, Cmd+Left wider, also from its terminal.
+  //   (increase/decreaseViewWidth always resize the editor; increase/decreaseViewSize resize the focused part, here the right side bar.)
+  {"key": "cmd+right", "command": "workbench.action.decreaseViewSize", "when": "auxiliaryBarFocus"},
+  {"key": "cmd+left", "command": "workbench.action.increaseViewSize", "when": "auxiliaryBarFocus"},
   {"key": "cmd+right", "command": "workbench.action.increaseViewWidth", "when": "!sideBarFocus && !auxiliaryBarFocus && !textInputFocus && !terminalFocus"},
   {"key": "cmd+left", "command": "workbench.action.decreaseViewWidth", "when": "!sideBarFocus && !auxiliaryBarFocus && !textInputFocus && !terminalFocus"},
   {"key": "cmd+=", "command": "editor.action.fontZoomIn", "when": "editorFocus || notebookEditorFocused"},
