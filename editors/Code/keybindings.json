@@ -602,7 +602,6 @@
   {"key": "browserforward", "command": "-workbench.action.navigateForward", "when": "canNavigateForward"},
   {"key": "ctrl+shift+-", "command": "-workbench.action.navigateForward", "when": "canNavigateForward"},
   {"key": "cmd+k cmd+q", "command": "-workbench.action.navigateToLastEditLocation"},
-  {"key": "shift+cmd+n", "command": "-workbench.action.newWindow"},
   {"key": "shift+cmd+]", "command": "-workbench.action.nextEditor"},
   {"key": "cmd+k alt+cmd+right", "command": "-workbench.action.nextEditorInGroup"},
   {"key": "shift+cmd+a", "command": "-workbench.action.openAgentsWindow", "when": "chatHasCreatedSessionInAgentsWindow && config.chat.agent.enabled && !accessibilityModeEnabled && !chatSetupDisabledInWorkspace && !chatSetupHidden && !isAuxiliaryWindow && !isSessionsWindow", "args": {"source": "keyboardShortcut"}},
