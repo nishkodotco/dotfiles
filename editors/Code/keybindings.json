@@ -39,12 +39,13 @@
   {"key": "cmd+-", "command": "workbench.action.zoomOut", "when": "!editorFocus && !notebookEditorFocused && !terminalFocus"},
   {"key": "cmd+0", "command": "workbench.action.zoomReset", "when": "!editorFocus && !notebookEditorFocused && !terminalFocus"},
   // --- Width: Cmd+Right / Cmd+Left move the divider next to the focused part in the arrow's direction.
-  //     Explorer (left side bar): Right widens it, Left narrows it. Editor area or right side bar: Right narrows it, Left widens it.
-  //     In text, inputs and the terminal they keep moving the cursor. Hold the key to keep resizing. ---
-  {"key": "cmd+right", "command": "workbench.action.increaseViewWidth", "when": "sideBarFocus && !textInputFocus && !terminalFocus"},
-  {"key": "cmd+left", "command": "workbench.action.decreaseViewWidth", "when": "sideBarFocus && !textInputFocus && !terminalFocus"},
-  {"key": "cmd+right", "command": "workbench.action.decreaseViewWidth", "when": "!sideBarFocus && !textInputFocus && !terminalFocus"},
-  {"key": "cmd+left", "command": "workbench.action.increaseViewWidth", "when": "!sideBarFocus && !textInputFocus && !terminalFocus"},
+  //     Any side bar view (Explorer, Search, Source Control, Extensions, ... and the secondary side bar): Right widens it, Left narrows it,
+  //     even when its search or commit box has focus. Editor area: Right narrows it, Left widens it.
+  //     In editor text, other inputs and the terminal they keep moving the cursor. Hold the key to keep resizing. ---
+  {"key": "cmd+right", "command": "workbench.action.increaseViewWidth", "when": "(sideBarFocus || auxiliaryBarFocus) && !terminalFocus"},
+  {"key": "cmd+left", "command": "workbench.action.decreaseViewWidth", "when": "(sideBarFocus || auxiliaryBarFocus) && !terminalFocus"},
+  {"key": "cmd+right", "command": "workbench.action.decreaseViewWidth", "when": "!sideBarFocus && !auxiliaryBarFocus && !textInputFocus && !terminalFocus"},
+  {"key": "cmd+left", "command": "workbench.action.increaseViewWidth", "when": "!sideBarFocus && !auxiliaryBarFocus && !textInputFocus && !terminalFocus"},
   {"key": "cmd+=", "command": "editor.action.fontZoomIn", "when": "editorFocus || notebookEditorFocused"},
   {"key": "cmd+-", "command": "editor.action.fontZoomOut", "when": "editorFocus || notebookEditorFocused"},
   {"key": "cmd+0", "command": "editor.action.fontZoomReset", "when": "editorFocus || notebookEditorFocused"},

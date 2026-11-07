@@ -27,10 +27,10 @@
   {"key": "ctrl+=", "command": "workbench.action.zoomIn", "when": "!editorFocus && !notebookEditorFocused && !terminalFocus"},  // mac: cmd+=
   {"key": "ctrl+-", "command": "workbench.action.zoomOut", "when": "!editorFocus && !notebookEditorFocused && !terminalFocus"},  // mac: cmd+-
   {"key": "ctrl+0", "command": "workbench.action.zoomReset", "when": "!editorFocus && !notebookEditorFocused && !terminalFocus"},  // mac: cmd+0
-  {"key": "ctrl+right", "command": "workbench.action.increaseViewWidth", "when": "sideBarFocus && !textInputFocus && !terminalFocus"},  // mac: cmd+right
-  {"key": "ctrl+left", "command": "workbench.action.decreaseViewWidth", "when": "sideBarFocus && !textInputFocus && !terminalFocus"},  // mac: cmd+left
-  {"key": "ctrl+right", "command": "workbench.action.decreaseViewWidth", "when": "!sideBarFocus && !textInputFocus && !terminalFocus"},  // mac: cmd+right
-  {"key": "ctrl+left", "command": "workbench.action.increaseViewWidth", "when": "!sideBarFocus && !textInputFocus && !terminalFocus"},  // mac: cmd+left
+  {"key": "ctrl+right", "command": "workbench.action.increaseViewWidth", "when": "(sideBarFocus || auxiliaryBarFocus) && !terminalFocus"},  // mac: cmd+right
+  {"key": "ctrl+left", "command": "workbench.action.decreaseViewWidth", "when": "(sideBarFocus || auxiliaryBarFocus) && !terminalFocus"},  // mac: cmd+left
+  {"key": "ctrl+right", "command": "workbench.action.decreaseViewWidth", "when": "!sideBarFocus && !auxiliaryBarFocus && !textInputFocus && !terminalFocus"},  // mac: cmd+right
+  {"key": "ctrl+left", "command": "workbench.action.increaseViewWidth", "when": "!sideBarFocus && !auxiliaryBarFocus && !textInputFocus && !terminalFocus"},  // mac: cmd+left
   {"key": "ctrl+=", "command": "editor.action.fontZoomIn", "when": "editorFocus || notebookEditorFocused"},  // mac: cmd+=
   {"key": "ctrl+-", "command": "editor.action.fontZoomOut", "when": "editorFocus || notebookEditorFocused"},  // mac: cmd+-
   {"key": "ctrl+0", "command": "editor.action.fontZoomReset", "when": "editorFocus || notebookEditorFocused"},  // mac: cmd+0
