@@ -33,7 +33,8 @@ snippet or multi-cursor is active (then `Esc` closes that first, and a second `E
 
 ## Cmd shortcuts that Normal mode replaces
 
-These still work today. Each one can be removed to free the key, because Normal mode covers it:
+Cmd+Up/Down and Cmd+Left/Right are already freed in files: Cmd+Left/Right now resize the focused part (see KEYBINDINGS.md).
+The rest still work today and can be removed to free the key, because Normal mode covers them:
 
 | Shortcut | Normal-mode replacement |
 |---|---|
@@ -42,8 +43,8 @@ These still work today. Each one can be removed to free the key, because Normal 
 | Cmd+X | `dd` (line) or `v` + `x` |
 | Cmd+Z / Cmd+Shift+Z | `u` / `Ctrl+R` |
 | Cmd+F, Cmd+G, Cmd+Shift+G | `/`, `n`, `N` |
-| Cmd+Up / Cmd+Down | `gg` / `G` |
-| Cmd+Left / Cmd+Right in a file | `0` / `$` |
+| Cmd+Up / Cmd+Down (removed) | `gg` / `G` |
+| Cmd+Left / Cmd+Right in a file (now resize) | `0` / `$` |
 | Cmd+L (select line) | `V` |
 | Cmd+Shift+K (delete line) | `dd` |
 | Cmd+Enter / Cmd+Shift+Enter (new line below/above) | `o` / `O` |
