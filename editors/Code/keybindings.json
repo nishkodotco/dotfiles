@@ -166,11 +166,11 @@
   {"key": "cmd+ctrl+k", "command": "workbench.action.tasks.terminate"},
   {"key": "cmd+ctrl+n", "command": "workbench.action.terminal.new"},
   // --- Panel keys: press once to open, press again to close and go back to the editor ---
-  {"key": "cmd+t", "command": "workbench.action.terminal.focus"}, // show the terminal in the right side bar (creates one if none)
-  {"key": "cmd+t", "command": "openInIntegratedTerminal", "when": "filesExplorerFocus && !inputFocus"}, // in the Explorer: new terminal at the selected file's folder
-  {"key": "cmd+t", "command": "runCommands", "when": "terminalFocus && !terminalEditorFocus && auxiliaryBarVisible", "args": {"commands": ["workbench.action.closeAuxiliaryBar", "workbench.action.focusActiveEditorGroup"]}}, // press again in the terminal: close the right side bar
-  {"key": "shift+cmd+t", "command": "openInIntegratedTerminal", "when": "filesExplorerFocus && !inputFocus"}, // same, on Cmd+Shift+T
-  {"key": "shift+cmd+t", "command": "workbench.action.terminal.new", "when": "!filesExplorerFocus || inputFocus"}, // anywhere else: new terminal at the workspace folder
+  // --- Terminal on Cmd+Shift+T (Cmd+T is free): shows the terminal in the right side bar (creates one if none); in the Explorer it opens one at the
+  //     selected file's folder; pressed again inside the terminal it closes the right side bar. ---
+  {"key": "shift+cmd+t", "command": "workbench.action.terminal.focus"},
+  {"key": "shift+cmd+t", "command": "openInIntegratedTerminal", "when": "filesExplorerFocus && !inputFocus"},
+  {"key": "shift+cmd+t", "command": "runCommands", "when": "terminalFocus && !terminalEditorFocus && auxiliaryBarVisible", "args": {"commands": ["workbench.action.closeAuxiliaryBar", "workbench.action.focusActiveEditorGroup"]}},
   // --- Output, Ports, Problems and Debug Console live in the right side bar. Each key opens its view there; pressing it again while that view has focus closes the right side bar.
   //     No shortcut opens the bottom panel. ---
   {"key": "cmd+o", "command": "workbench.action.output.toggleOutput"},
