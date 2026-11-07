@@ -165,6 +165,7 @@
   {"key": "cmd+t", "command": "workbench.action.createTerminalEditor"}, // new terminal as an editor tab
   {"key": "cmd+t", "command": "openInIntegratedTerminal", "when": "filesExplorerFocus && !inputFocus"}, // in the Explorer: new terminal tab at the selected file's folder
   {"key": "shift+cmd+t", "command": "openInIntegratedTerminal", "when": "filesExplorerFocus && !inputFocus"}, // same, on Cmd+Shift+T
+  {"key": "shift+cmd+t", "command": "workbench.action.terminal.new", "when": "!filesExplorerFocus || inputFocus"}, // anywhere else: new terminal at the workspace folder
   {"key": "cmd+o", "command": "workbench.action.output.toggleOutput"},
   {"key": "cmd+o", "command": "runCommands", "when": "panelVisible && activePanel == 'workbench.panel.output'", "args": {"commands": ["workbench.action.closePanel", "workbench.action.focusActiveEditorGroup"]}},
   {"key": "cmd+p", "command": "~remote.forwardedPorts.focus"},
